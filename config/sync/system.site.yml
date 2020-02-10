@@ -1,0 +1,14 @@
+uuid: 6a23c3cb-bb7e-428e-bd13-9e33e132b949
+name: cdp
+mail: cdp@cdp.drupal.localhost
+slogan: ''
+page:
+  403: ''
+  404: ''
+  front: /user/login
+admin_compact_mode: false
+weight_select_max: 100
+langcode: en
+default_langcode: en
+_core:
+  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
