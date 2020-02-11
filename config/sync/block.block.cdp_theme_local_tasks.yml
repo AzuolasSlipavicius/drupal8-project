@@ -1,0 +1,22 @@
+uuid: 051bc773-fe63-4903-acd7-227f64301a0b
+langcode: en
+status: true
+dependencies:
+  theme:
+    - cdp_theme
+_core:
+  default_config_hash: c-06bbElRY5sKmglk74ppgTW93Et4-EJFyNiUZMb8JY
+id: cdp_theme_local_tasks
+theme: cdp_theme
+region: content
+weight: -20
+provider: null
+plugin: local_tasks_block
+settings:
+  id: local_tasks_block
+  label: Tabs
+  provider: core
+  label_display: '0'
+  primary: true
+  secondary: true
+visibility: {  }

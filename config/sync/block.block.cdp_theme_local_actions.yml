@@ -1,0 +1,20 @@
+uuid: dee5d4d8-3a43-47ec-a628-3bc7095ab6d2
+langcode: en
+status: true
+dependencies:
+  theme:
+    - cdp_theme
+_core:
+  default_config_hash: PffmQ-ABSz5tFjWmVsR7NesunDnEivvopnJnBjl8KNE
+id: cdp_theme_local_actions
+theme: cdp_theme
+region: content
+weight: -10
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

@@ -1,0 +1,9 @@
+name: 'CodeBakers Project Theme'
+type: theme
+description: 'Custom theme for CodeBakers project'
+core: 8.x
+regions:
+  header: Header
+  content: Content
+  sidebar: Sidebar
+  footer: Footer
