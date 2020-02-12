@@ -7,3 +7,5 @@ regions:
   content: Content
   sidebar: Sidebar
   footer: Footer
+libraries:
+  - cdp_theme/cdp-libraries-main

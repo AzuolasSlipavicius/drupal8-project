@@ -1,0 +1,15 @@
+cdp-libraries-main:
+  version: VERSION
+  css:
+    theme:
+      css/cdp-libraries.css: {}
+  js:
+    js/cdp-libraries.js: {}
+
+cdp-libraries-sidebar:
+  version: VERSION
+  css:
+    theme:
+      css/cdp-libraries-sidebar.css: {}
+  js:
+    js/cdp-libraries-sidebar.js: {}

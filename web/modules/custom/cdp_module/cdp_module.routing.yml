@@ -1,0 +1,7 @@
+cdp_module.content:
+  path: '/hello'
+  defaults:
+    _controller: '\Drupal\cdp_module\Controller\CdpController::content'
+    _title: 'Hello World'
+  requirements:
+    _permission: 'access content'

@@ -58,30 +58,31 @@
 
   {{ page.help }}
 
-  <main role="main">
-    <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
+  <main role="main" class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <a id="main-content" tabindex="-1"></a>{# link is in html.html.twig #}
 
-    <div class="layout-content">
-      {{ page.content }}
-    </div>{# /.layout-content #}
-
-    {% if page.sidebar_first %}
-      <aside class="layout-sidebar-first" role="complementary">
-        {{ page.sidebar_first }}
-      </aside>
-    {% endif %}
-
-    {% if page.sidebar_second %}
-      <aside class="layout-sidebar-second" role="complementary">
-        {{ page.sidebar_second }}
-      </aside>
-    {% endif %}
-
+        <div class="layout-content">
+          {{ page.content }}
+        </div>{# /.layout-content #}
+      </div>
+      <div class="col-md-4">
+        {% if page.sidebar %}
+          {{ attach_library('cdp_theme/cdp-libraries-sidebar') }}
+          <aside class="layout-sidebar-first custom-sidebar-color" role="complementary">
+            {{ page.sidebar }}
+          </aside>
+        {% endif %}
+      </div>
+    </div>
   </main>
 
   {% if page.footer %}
-    <footer role="contentinfo">
-      {{ page.footer }}
+    <footer role="contentinfo" class="footer">
+      <div class="container">
+        {{ page.footer }}
+      </div>
     </footer>
   {% endif %}
 
