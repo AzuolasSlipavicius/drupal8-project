@@ -1,0 +1,21 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+
+function cdp_theme_preprocess_region(&$variables) {
+//  if ($variables['region'] === 'header') {
+//    $variables['attributes']['class'] = ['my-header-class'];
+//  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function cdp_theme_form_alter(&$form, FormStateInterface $form_state,$form_id) {
+  // Check when the right form is passed.
+  if ($form_id == 'user_login_form') {
+    // Add the check box.
+    $form['#attributes']['class'] = ['inputGroup'];
+  }
+//  dump($form_state);
+}

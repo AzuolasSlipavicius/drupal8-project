@@ -1,0 +1,42 @@
+cdp_forms.basic:
+  path: '/development/forms/basic'
+  defaults:
+    _title: 'Basic form with route'
+    _form: 'Drupal\cdp_forms\Form\BasicForm'
+  requirements:
+    _permission: 'access content'
+cdp_forms.basic.validate:
+  path: '/development/forms/basic-with-validation'
+  defaults:
+    _title: 'Basic form with route and basic validation'
+    _form: 'Drupal\cdp_forms\Form\BasicFormWithValidation'
+  requirements:
+    _permission: 'access content'
+cdp_forms.basic.custom_submit:
+  path: '/development/forms/basic-with-custom-submit'
+  defaults:
+    _title: 'Basic form with route and custom submit function'
+    _form: 'Drupal\cdp_forms\Form\BasicFormWithCustomSubmit'
+  requirements:
+    _permission: 'access content'
+cdp_forms.basic.default_custom_submit:
+  path: '/development/forms/basic-with-default-and-custom-submit'
+  defaults:
+    _title: 'Basic form with route and custom submit function'
+    _form: 'Drupal\cdp_forms\Form\BasicFormWithDefaultAndCustomSubmit'
+  requirements:
+    _permission: 'access content'
+cdp_forms.page.basic:
+  path: '/development/forms/pages/basic'
+  defaults:
+    _title: 'Basic form displayed via custom controller'
+    _controller: '\Drupal\cdp_forms\Controller\BasicFormController::renderBasicFormInController'
+  requirements:
+    _permission: 'access content'
+cdp_forms.page.basic_with_elements:
+  path: '/development/forms/pages/basic-with-elements'
+  defaults:
+    _title: 'Basic form displayed via custom controller with custom elements'
+    _controller: '\Drupal\cdp_forms\Controller\BasicFormController::renderBasicFormWithMultipleElementsInController'
+  requirements:
+    _permission: 'access content'
