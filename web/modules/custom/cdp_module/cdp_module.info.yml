@@ -1,6 +1,0 @@
-name: 'CodeBakers project custom module'
-description: 'Shows links, custom html, etc..'
-package: Custom
-
-type: module
-core: 8.x

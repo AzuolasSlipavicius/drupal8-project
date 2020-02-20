@@ -1,6 +1,6 @@
-name: 'CodeBakers Project Theme'
+name: 'AZ CodeBakers Project Theme'
 type: theme
-description: 'Custom theme for CodeBakers project'
+description: 'AZ Custom theme for CodeBakers project'
 core: 8.x
 regions:
   header: Header
@@ -9,3 +9,7 @@ regions:
   footer: Footer
 libraries:
   - cdp_theme/cdp-libraries-main
+features:
+  favicon: true
+favicon:
+  use_default: false
