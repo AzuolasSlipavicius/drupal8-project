@@ -1,0 +1,9 @@
+cdp_custom_signin.settings_form:
+  path: '/admin/config/system/cdp-custom-signin'
+  defaults:
+    _title: 'cdp_custom_signin settings'
+#    _form: 'Drupal\cdp_custom_signin\Form\SettingsForm'
+  requirements:
+    _user_is_logged_in: 'FALSE'
+  options:
+    _maintenance_access: TRUE

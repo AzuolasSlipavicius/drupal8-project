@@ -1,0 +1,5 @@
+name: "CDP frontpage"
+description: "CDP frontpage controller"
+type: module
+core: 8.x
+package: CDP

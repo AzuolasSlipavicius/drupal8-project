@@ -1,0 +1,5 @@
+services:
+  cdp_frontpage.route_subscriber:
+    class: Drupal\cdp_frontpage\EventSubscriber\CdpUserCustomLoginFormRouteSubscriber
+    tags:
+      - { name: event_subscriber }

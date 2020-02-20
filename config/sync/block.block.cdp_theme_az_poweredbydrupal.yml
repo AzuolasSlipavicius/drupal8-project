@@ -1,0 +1,20 @@
+uuid: 1e4e1759-bfbe-4f03-b3c1-1223befec870
+langcode: en
+status: true
+dependencies:
+  module:
+    - system
+  theme:
+    - cdp_theme_az
+id: cdp_theme_az_poweredbydrupal
+theme: cdp_theme_az
+region: footer
+weight: 0
+provider: null
+plugin: system_powered_by_block
+settings:
+  id: system_powered_by_block
+  label: 'Powered by Drupal'
+  provider: system
+  label_display: '0'
+visibility: {  }

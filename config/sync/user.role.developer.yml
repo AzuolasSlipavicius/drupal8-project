@@ -1,0 +1,12 @@
+uuid: ad0bc320-7e7e-4cf3-aeb6-8501a21efa77
+langcode: en
+status: true
+dependencies: {  }
+id: developer
+label: Developer
+weight: -7
+is_admin: true
+permissions:
+  - 'access toolbar'
+  - 'administer account settings'
+  - 'view own unpublished content'

@@ -1,24 +1,22 @@
-uuid: 386ffb59-4a87-4f88-8168-793d772b0dd9
+uuid: a7780a78-7932-4e2f-a20f-35eb8e2414a4
 langcode: en
 status: true
 dependencies:
   config:
-    - system.menu.tools
+    - system.menu.account
   module:
     - system
   theme:
     - cdp_theme
-_core:
-  default_config_hash: uUF2GYN2x5fcmOu26M-gwqUA-yVWMDD_MRmnYfmPzlM
-id: cdp_theme_tools
+id: useraccountmenu
 theme: cdp_theme
-region: header
+region: sidebar
 weight: 0
 provider: null
-plugin: 'system_menu_block:tools'
+plugin: 'system_menu_block:account'
 settings:
-  id: 'system_menu_block:tools'
-  label: Tools
+  id: 'system_menu_block:account'
+  label: 'User account menu'
   provider: system
   label_display: visible
   level: 1
