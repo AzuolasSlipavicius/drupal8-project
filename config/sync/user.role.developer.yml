@@ -1,12 +1,9 @@
-uuid: ad0bc320-7e7e-4cf3-aeb6-8501a21efa77
+uuid: 0a4756be-6e6f-4fb6-be92-dd5791575ce4
 langcode: en
 status: true
 dependencies: {  }
 id: developer
 label: Developer
-weight: -7
-is_admin: true
-permissions:
-  - 'access toolbar'
-  - 'administer account settings'
-  - 'view own unpublished content'
+weight: 3
+is_admin: null
+permissions: {  }

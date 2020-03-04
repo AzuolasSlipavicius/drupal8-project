@@ -1,0 +1,6 @@
+cdp_role_selection.admin:
+  route_name: cdp_role_selection.role
+  title: 'Registration'
+  description: 'Configurations for Mail Login.'
+  base_route: entity.user.admin_form
+  weight: 0

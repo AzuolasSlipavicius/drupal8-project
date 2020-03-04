@@ -1,6 +1,0 @@
-name: CDP Pages
-type: module
-description: This module provides general examples of how custom pages can be displayed
-package: CDP
-core: 8.x
-core_version_requirement: ^8 || ^9
