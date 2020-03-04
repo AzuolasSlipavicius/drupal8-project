@@ -1,15 +1,15 @@
-uuid: 6a23c3cb-bb7e-428e-bd13-9e33e132b949
+uuid: ba6bb205-2b25-46f3-8fd9-2e21d3cfa646
 name: cdp
-mail: cdp@cdp.drupal.localhost
+mail: cdp@cdp.cdp
 slogan: ''
 page:
   403: ''
   404: ''
-  front: /user/login
+  front: /node
 admin_compact_mode: false
 weight_select_max: 100
 langcode: en
 default_langcode: en
 _core:
-  default_config_hash: yXadRE77Va-G6dxhd2kPYapAvbnSvTF6hO4oXiOEynI
+  default_config_hash: yTxtFqBHnEWxQswuWvkjE8mKw2t8oKuCL1q8KnfHuGE
 mail_notification: ''

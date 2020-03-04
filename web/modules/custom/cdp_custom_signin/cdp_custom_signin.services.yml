@@ -1,6 +1,0 @@
-services:
-  cdp_custom_signin.event_subscriber:
-    class: Drupal\cdp_custom_signin\EventSubscriber\CdpCustomSigninSubscriber
-    arguments: ['@messenger']
-    tags:
-      - { name: event_subscriber }

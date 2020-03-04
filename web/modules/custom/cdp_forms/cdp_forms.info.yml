@@ -1,6 +1,0 @@
-name: CDP Forms
-type: module
-description: This module provides general examples how to manipulate forms and routes that uses forms.
-package: CDP
-core: 8.x
-core_version_requirement: ^8 || ^9

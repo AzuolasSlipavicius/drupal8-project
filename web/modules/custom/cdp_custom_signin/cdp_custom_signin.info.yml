@@ -1,6 +1,0 @@
-name: cdp_custom_signin
-type: module
-description: This module owerride login and registration forms
-package: CDP
-core: 8.x
-core_version_requirement: ^8 || ^9

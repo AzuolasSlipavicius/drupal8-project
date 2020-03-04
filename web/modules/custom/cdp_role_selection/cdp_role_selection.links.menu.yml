@@ -1,0 +1,5 @@
+cdp_role_selection.role:
+  title: register form
+  description: Role selection
+  route_name: cdp_role_selection.role
+  weight: 10

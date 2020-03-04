@@ -1,13 +1,9 @@
-uuid: 0746d319-3819-4016-8a38-0e8907d53f73
+uuid: 7de82945-63cc-4323-b0a8-20893cd24ad6
 langcode: en
 status: true
 dependencies: {  }
 id: tech_lead
 label: 'Tech lead'
-weight: -6
+weight: 4
 is_admin: null
-permissions:
-  - 'access toolbar'
-  - 'administer account settings'
-  - 'link to any page'
-  - 'view own unpublished content'
+permissions: {  }

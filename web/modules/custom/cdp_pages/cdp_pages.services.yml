@@ -1,8 +1,0 @@
-services:
-  cdp_pages.front_page_redirect_subscriber:
-    class: Drupal\cdp_pages\EventSubscriber\FrontPageRedirectSubscriber
-    arguments:
-      - '@current_user'
-      - '@config.factory'
-    tags:
-      - { name: event_subscriber }
