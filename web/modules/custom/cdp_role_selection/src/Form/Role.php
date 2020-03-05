@@ -8,7 +8,7 @@ use Drupal\Core\Form\FormStateInterface;
 /**
  * Configure Cdp role selection settings for this site.
  */
-class role extends ConfigFormBase {
+class Role extends ConfigFormBase {
 
   /**
    * {@inheritdoc}
@@ -73,7 +73,7 @@ class role extends ConfigFormBase {
 
     $this->config('cdp_role_selection.settings')
       ->set('roles', $form_state->getValue('roles'))
-      ->set('displayRoles', $displayRoles)
+      ->set('display_roles', $displayRoles)
       ->save();
     parent::submitForm($form, $form_state);
   }
