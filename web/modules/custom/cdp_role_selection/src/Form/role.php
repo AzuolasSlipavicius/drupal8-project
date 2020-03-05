@@ -30,22 +30,14 @@ class role extends ConfigFormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
 
     $config = \Drupal::service('config.factory')->getEditable('cdp_role_selection.settings');
-
-    //Returns selected roles from settings
-    $configRoles =[];
-    foreach ($config->get('roles') as $role) {
-      if ($role !== 0 ) {
-        $configRoles[]=$role;
-      }
-    }
-
+    $configRoles = $config->get('roles');
     //Returns role ID
     $rolesBundle =\Drupal::entityTypeManager()->getStorage('user_role')->loadMultiple();
-    $rolesID=[];
+    $roles=[];
     foreach ($rolesBundle as $role =>$value) {
-//      if ($role !== 'anonymous' && $role !== 'authenticated' && $role !== 'administrator')
-      $rolesID[] = $role;
+      $roles[$role] =  $value->get('label');
     }
+
     $form['role_selection'] = [
       '#type' => 'fieldset',
       '#title' => $this->t('General Configurations'),
@@ -55,7 +47,7 @@ class role extends ConfigFormBase {
     $form['role_selection']['roles'] = [
       '#type' => 'checkboxes',
       '#title' => $this->t('Select role'),
-      '#options' => $rolesID,
+      '#options' => $roles,
       '#default_value' => $configRoles,
     ];
     return parent::buildForm($form, $form_state);
@@ -72,8 +64,16 @@ class role extends ConfigFormBase {
    * {@inheritdoc}
    */
   public function submitForm(array &$form, FormStateInterface $form_state) {
+    $displayRoles = [];
+    foreach($form_state->getUserInput()['roles'] as $key => $value){
+      if ($value !== null) {
+        $displayRoles[$key] = \Drupal::entityTypeManager()->getStorage('user_role')->load($key)->get('label');
+      }
+    }
+
     $this->config('cdp_role_selection.settings')
       ->set('roles', $form_state->getValue('roles'))
+      ->set('displayRoles', $displayRoles)
       ->save();
     parent::submitForm($form, $form_state);
   }
