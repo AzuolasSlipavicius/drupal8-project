@@ -50,6 +50,8 @@ class Role extends ConfigFormBase {
       '#options' => $roles,
       '#default_value' => $configRoles,
     ];
+
+
     return parent::buildForm($form, $form_state);
   }
 
@@ -70,6 +72,7 @@ class Role extends ConfigFormBase {
         $displayRoles[$key] = \Drupal::entityTypeManager()->getStorage('user_role')->load($key)->get('label');
       }
     }
+    drupal_flush_all_caches();
 
     $this->config('cdp_role_selection.settings')
       ->set('roles', $form_state->getValue('roles'))

@@ -10,7 +10,7 @@ function cdp_role_selection_form_user_register_form_alter(&$form, FormStateInter
   $config = \Drupal::service('config.factory')->getEditable('cdp_role_selection.settings');
   $configRoles = $config->get('display_roles');
   if (!empty($configRoles)){
-    $form['roles'] = [
+    $form['custom_roles'] = [
       '#type' => 'select',
       '#title' => t('Select role'),
       '#required' => TRUE,
@@ -21,5 +21,5 @@ function cdp_role_selection_form_user_register_form_alter(&$form, FormStateInter
 }
 
 function _cdp_role_selection_validate_form(array &$form, FormStateInterface $form_state): void {
-  $form_state->setValue('roles', [$form_state->getCompleteForm()['roles']['#value']]);
+  $form_state->setValue('roles', [$form_state->getValue('custom_roles')]);
 }
