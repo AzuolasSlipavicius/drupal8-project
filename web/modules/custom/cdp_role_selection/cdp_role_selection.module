@@ -1,0 +1,25 @@
+<?php
+
+use Drupal\Core\Form\FormStateInterface;
+
+/**
+ * Implements hook_form_alter().
+ */
+
+function cdp_role_selection_form_user_register_form_alter(&$form, FormStateInterface $form_state, $form_id) {
+  $config = \Drupal::service('config.factory')->getEditable('cdp_role_selection.settings');
+  $configRoles = $config->get('display_roles');
+  if (!empty($configRoles)){
+    $form['custom_roles'] = [
+      '#type' => 'select',
+      '#title' => t('Select role'),
+      '#required' => TRUE,
+      '#options' => $configRoles,
+    ];
+  $form['#validate'] = array_merge(['_cdp_role_selection_validate_form'], $form['#validate']);
+  }
+}
+
+function _cdp_role_selection_validate_form(array &$form, FormStateInterface $form_state): void {
+  $form_state->setValue('roles', [$form_state->getValue('custom_roles')]);
+}
