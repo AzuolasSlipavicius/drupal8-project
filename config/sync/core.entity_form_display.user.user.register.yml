@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.user.register
+    - field.field.user.user.field_name
   module:
     - user
 _core:
@@ -17,6 +18,14 @@ content:
     weight: -10
     region: content
     settings: {  }
+    third_party_settings: {  }
+  field_name:
+    type: string_textfield
+    weight: 0
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
     third_party_settings: {  }
   timezone:
     weight: 6

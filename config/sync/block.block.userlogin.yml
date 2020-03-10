@@ -1,0 +1,20 @@
+uuid: 709f151c-c30e-4532-9293-f5848fc39198
+langcode: en
+status: true
+dependencies:
+  module:
+    - user
+  theme:
+    - cdp_theme
+id: userlogin
+theme: cdp_theme
+region: sidebar
+weight: 0
+provider: null
+plugin: user_login_block
+settings:
+  id: user_login_block
+  label: 'User login'
+  provider: user
+  label_display: visible
+visibility: {  }

@@ -2,6 +2,8 @@ uuid: 0aa38f61-6a3e-4286-a24c-c5ff3630eb54
 langcode: en
 status: true
 dependencies:
+  config:
+    - field.field.user.user.field_name
   module:
     - user
 _core:
@@ -21,6 +23,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
+  field_name:
+    weight: 7
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+    region: content
   language:
     weight: 0
     region: content

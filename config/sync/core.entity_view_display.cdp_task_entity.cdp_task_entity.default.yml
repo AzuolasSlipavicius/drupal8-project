@@ -1,0 +1,115 @@
+uuid: 73773fae-b307-4bed-8810-06c8afd944ba
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.cdp_task_entity.cdp_task_entity.field_a
+    - field.field.cdp_task_entity.cdp_task_entity.field_developer
+    - field.field.cdp_task_entity.cdp_task_entity.field_developer_
+    - field.field.cdp_task_entity.cdp_task_entity.field_projects
+    - field.field.cdp_task_entity.cdp_task_entity.field_status
+    - field.field.cdp_task_entity.cdp_task_entity.field_ta
+    - field.field.cdp_task_entity.cdp_task_entity.field_tech_lead
+    - field.field.cdp_task_entity.cdp_task_entity.field_tech_lead_
+  module:
+    - cdp_task_entity
+    - link
+    - options
+    - text
+id: cdp_task_entity.cdp_task_entity.default
+targetEntityType: cdp_task_entity
+bundle: cdp_task_entity
+mode: default
+content:
+  description:
+    type: text_default
+    label: above
+    weight: 10
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  field_a:
+    weight: 16
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_developer:
+    weight: 13
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_developer_:
+    weight: 15
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  field_projects:
+    weight: 18
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_status:
+    weight: 11
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+    region: content
+  field_ta:
+    weight: 17
+    label: above
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+    region: content
+  field_tech_lead:
+    weight: 12
+    label: above
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_tech_lead_:
+    weight: 14
+    label: above
+    settings:
+      thousand_separator: ''
+      decimal_separator: .
+      scale: 2
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_decimal
+    region: content
+  title:
+    label: hidden
+    type: string
+    weight: -5
+    region: content
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+hidden: {  }

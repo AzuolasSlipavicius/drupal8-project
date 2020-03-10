@@ -1,0 +1,104 @@
+uuid: b1f69da3-199b-48aa-8970-8118d325467c
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.cdp_task_entity.cdp_task_entity.field_a
+    - field.field.cdp_task_entity.cdp_task_entity.field_developer
+    - field.field.cdp_task_entity.cdp_task_entity.field_developer_
+    - field.field.cdp_task_entity.cdp_task_entity.field_projects
+    - field.field.cdp_task_entity.cdp_task_entity.field_status
+    - field.field.cdp_task_entity.cdp_task_entity.field_ta
+    - field.field.cdp_task_entity.cdp_task_entity.field_tech_lead
+    - field.field.cdp_task_entity.cdp_task_entity.field_tech_lead_
+  module:
+    - cdp_task_entity
+    - link
+    - text
+id: cdp_task_entity.cdp_task_entity.default
+targetEntityType: cdp_task_entity
+bundle: cdp_task_entity
+mode: default
+content:
+  description:
+    type: text_textarea
+    weight: 10
+    region: content
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+  field_a:
+    weight: 16
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_developer:
+    weight: 13
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_developer_:
+    weight: 15
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  field_projects:
+    weight: 18
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_status:
+    weight: 11
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+    region: content
+  field_ta:
+    weight: 17
+    settings:
+      placeholder_url: ''
+      placeholder_title: ''
+    third_party_settings: {  }
+    type: link_default
+    region: content
+  field_tech_lead:
+    weight: 12
+    settings:
+      match_operator: CONTAINS
+      match_limit: 10
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: entity_reference_autocomplete
+    region: content
+  field_tech_lead_:
+    weight: 14
+    settings:
+      placeholder: ''
+    third_party_settings: {  }
+    type: number
+    region: content
+  title:
+    type: string_textfield
+    weight: -5
+    region: content
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+hidden: {  }

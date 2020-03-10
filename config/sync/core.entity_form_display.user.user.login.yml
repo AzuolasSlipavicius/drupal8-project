@@ -4,6 +4,7 @@ status: true
 dependencies:
   config:
     - core.entity_form_mode.user.login
+    - field.field.user.user.field_name
   module:
     - user
 _core:
@@ -33,4 +34,5 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-hidden: {  }
+hidden:
+  field_name: true
