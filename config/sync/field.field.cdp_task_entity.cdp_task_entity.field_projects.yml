@@ -1,0 +1,26 @@
+uuid: 6c5e6b45-2453-489b-9611-36ea9be2c686
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.cdp_task_entity.field_projects
+  module:
+    - cdp_task_entity
+id: cdp_task_entity.cdp_task_entity.field_projects
+field_name: field_projects
+entity_type: cdp_task_entity
+bundle: cdp_task_entity
+label: Project
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:cdp_project_entity'
+  handler_settings:
+    target_bundles: null
+    sort:
+      field: _none
+    auto_create: false
+field_type: entity_reference

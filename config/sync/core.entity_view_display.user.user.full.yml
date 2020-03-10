@@ -4,13 +4,94 @@ status: true
 dependencies:
   config:
     - core.entity_view_mode.user.full
+    - field.field.user.user.field_name
   module:
     - layout_builder
+    - layout_discovery
     - user
 third_party_settings:
   layout_builder:
     allow_custom: false
-    enabled: false
+    enabled: true
+    sections:
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: name
+        components:
+          85d5f806-4449-4661-87b4-c14f6636c410:
+            uuid: 85d5f806-4449-4661-87b4-c14f6636c410
+            region: content
+            configuration:
+              id: 'field_block:user:user:mail'
+              label: Email
+              provider: layout_builder
+              label_display: visible
+              formatter:
+                label: above
+                type: basic_string
+                settings: {  }
+                third_party_settings: {  }
+              context_mapping:
+                entity: '@user.current_user_context:current_user'
+                view_mode: view_mode
+            additional: {  }
+            weight: 3
+          9c7d23f4-ea2b-4c1e-a7af-97e3ac12cafe:
+            uuid: 9c7d23f4-ea2b-4c1e-a7af-97e3ac12cafe
+            region: content
+            configuration:
+              id: 'field_block:user:user:name'
+              label: Name
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: above
+                type: string
+                settings:
+                  link_to_entity: false
+                third_party_settings: {  }
+              context_mapping:
+                entity: '@user.current_user_context:current_user'
+                view_mode: view_mode
+            additional: {  }
+            weight: 2
+          6bf5f780-86d9-40d9-aeee-41f3f901ce30:
+            uuid: 6bf5f780-86d9-40d9-aeee-41f3f901ce30
+            region: content
+            configuration:
+              label_display: '0'
+              context_mapping:
+                entity: layout_builder.entity
+              id: 'extra_field_block:user:user:member_for'
+            additional: {  }
+            weight: 4
+          00d38d8c-6544-4c0a-8b03-f1b5ceecf87b:
+            uuid: 00d38d8c-6544-4c0a-8b03-f1b5ceecf87b
+            region: content
+            configuration:
+              id: 'field_block:user:user:roles'
+              label: Roles
+              provider: layout_builder
+              label_display: '0'
+              formatter:
+                label: above
+                type: entity_reference_label
+                settings:
+                  link: true
+                third_party_settings: {  }
+              context_mapping:
+                entity: '@user.current_user_context:current_user'
+                view_mode: view_mode
+            additional: {  }
+            weight: 5
+        third_party_settings: {  }
+      -
+        layout_id: layout_onecol
+        layout_settings:
+          label: ''
+        components: {  }
+        third_party_settings: {  }
 _core:
   default_config_hash: V51QPCKkgNREKtSmB9Iu2wmAMEpktVpnzklWaZV8UYo
 id: user.user.full
@@ -21,4 +102,7 @@ content:
   member_for:
     weight: 5
     region: content
-hidden: {  }
+    settings: {  }
+    third_party_settings: {  }
+hidden:
+  field_name: true

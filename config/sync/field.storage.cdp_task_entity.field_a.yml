@@ -1,0 +1,20 @@
+uuid: 54a8ce2a-50ee-4f3c-a68c-d1ae5b679863
+langcode: en
+status: true
+dependencies:
+  module:
+    - cdp_task_entity
+id: cdp_task_entity.field_a
+field_name: field_a
+entity_type: cdp_task_entity
+type: decimal
+settings:
+  precision: 10
+  scale: 2
+module: core
+locked: false
+cardinality: 1
+translatable: true
+indexes: {  }
+persist_with_no_fields: false
+custom_storage: false

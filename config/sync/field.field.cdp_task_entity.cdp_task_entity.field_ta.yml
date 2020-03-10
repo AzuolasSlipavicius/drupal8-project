@@ -1,0 +1,23 @@
+uuid: da4a0326-d6ec-4d7a-bd28-a5ab4525bfc9
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.cdp_task_entity.field_ta
+  module:
+    - cdp_task_entity
+    - link
+id: cdp_task_entity.cdp_task_entity.field_ta
+field_name: field_ta
+entity_type: cdp_task_entity
+bundle: cdp_task_entity
+label: 'Task link'
+description: ''
+required: false
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings:
+  link_type: 16
+  title: 1
+field_type: link

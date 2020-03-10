@@ -1,0 +1,25 @@
+uuid: 18e4032f-2230-4f60-8391-f1dc77c9578e
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.tools
+  module:
+    - system
+  theme:
+    - cdp_theme
+id: tools
+theme: cdp_theme
+region: sidebar
+weight: 0
+provider: null
+plugin: 'system_menu_block:tools'
+settings:
+  id: 'system_menu_block:tools'
+  label: Tools
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }
