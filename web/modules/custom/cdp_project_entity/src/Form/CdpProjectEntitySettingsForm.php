@@ -1,20 +1,20 @@
 <?php
 
-namespace Drupal\cdp_task_entity\Form;
+namespace Drupal\cdp_project_entity\Form;
 
 use Drupal\Core\Form\FormBase;
 use Drupal\Core\Form\FormStateInterface;
 
 /**
- * Configuration form for a cdp_task_entity entity type.
+ * Configuration form for a cdp project entity entity type.
  */
-class CdpTaskEntitySettingsForm extends FormBase {
+class CdpProjectEntitySettingsForm extends FormBase {
 
   /**
    * {@inheritdoc}
    */
   public function getFormId() {
-    return 'cdp_task_entity_settings';
+    return 'cdp_project_entity_settings';
   }
 
   /**
@@ -23,7 +23,7 @@ class CdpTaskEntitySettingsForm extends FormBase {
   public function buildForm(array $form, FormStateInterface $form_state) {
 
     $form['settings'] = [
-      '#markup' => $this->t('Settings form for a cdp_task_entity entity type.'),
+      '#markup' => $this->t('Settings form for a cdp project entity entity type.'),
     ];
 
     $form['actions'] = [

@@ -2,7 +2,7 @@
 
 /**
  * @file
- * Provides a cdp_task_entity entity type.
+ * Provides a cdp project entity entity type.
  */
 
 use Drupal\Core\Render\Element;
@@ -10,26 +10,26 @@ use Drupal\Core\Render\Element;
 /**
  * Implements hook_theme().
  */
-function cdp_task_entity_theme() {
+function cdp_project_entity_theme() {
   return [
-    'cdp_task_entity' => [
+    'cdp_project_entity' => [
       'render element' => 'elements',
     ],
   ];
 }
 
 /**
- * Prepares variables for cdp_task_entity templates.
+ * Prepares variables for cdp project entity templates.
  *
- * Default template: cdp-task-entity.html.twig.
+ * Default template: cdp-project-entity.html.twig.
  *
  * @param array $variables
  *   An associative array containing:
- *   - elements: An associative array containing the cdp_task_entity information and any
+ *   - elements: An associative array containing the cdp project entity information and any
  *     fields attached to the entity.
  *   - attributes: HTML attributes for the containing element.
  */
-function template_preprocess_cdp_task_entity(array &$variables) {
+function template_preprocess_cdp_project_entity(array &$variables) {
   foreach (Element::children($variables['elements']) as $key) {
     $variables['content'][$key] = $variables['elements'][$key];
   }

@@ -1,0 +1,10 @@
+entity.cdp_project_entity.settings:
+  title: Cdp project entity
+  description: Configure a Cdp project entity entity type
+  route_name:  entity.cdp_project_entity.settings
+  parent: system.admin_structure
+entity.cdp_project_entity.collection:
+  title: Cdp project entities
+  description: List of cdp project entities
+  route_name: entity.cdp_project_entity.collection
+  parent: system.admin_content

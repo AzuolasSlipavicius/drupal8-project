@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\cdp_task_entity;
+namespace Drupal\cdp_project_entity;
 
 use Drupal\Core\Entity\EntityInterface;
 use Drupal\Core\Entity\EntityListBuilder;
@@ -11,9 +11,9 @@ use Drupal\Core\Routing\RedirectDestinationInterface;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 
 /**
- * Provides a list controller for the cdp_task_entity entity type.
+ * Provides a list controller for the cdp project entity entity type.
  */
-class CdpTaskEntityListBuilder extends EntityListBuilder {
+class CdpProjectEntityListBuilder extends EntityListBuilder {
 
   /**
    * The date formatter service.
@@ -30,7 +30,7 @@ class CdpTaskEntityListBuilder extends EntityListBuilder {
   protected $redirectDestination;
 
   /**
-   * Constructs a new CdpTaskEntityListBuilder object.
+   * Constructs a new CdpProjectEntityListBuilder object.
    *
    * @param \Drupal\Core\Entity\EntityTypeInterface $entity_type
    *   The entity type definition.
@@ -70,7 +70,7 @@ class CdpTaskEntityListBuilder extends EntityListBuilder {
       ->count()
       ->execute();
 
-    $build['summary']['#markup'] = $this->t('Total cdp_task_entities: @total', ['@total' => $total]);
+    $build['summary']['#markup'] = $this->t('Total cdp project entities: @total', ['@total' => $total]);
     return $build;
   }
 
@@ -80,10 +80,6 @@ class CdpTaskEntityListBuilder extends EntityListBuilder {
   public function buildHeader() {
     $header['id'] = $this->t('ID');
     $header['title'] = $this->t('Title');
-    $header['status'] = $this->t('Status');
-    $header['uid'] = $this->t('Author');
-    $header['created'] = $this->t('Created');
-    $header['changed'] = $this->t('Updated');
     return $header + parent::buildHeader();
   }
 
@@ -91,16 +87,9 @@ class CdpTaskEntityListBuilder extends EntityListBuilder {
    * {@inheritdoc}
    */
   public function buildRow(EntityInterface $entity) {
-    /* @var $entity \Drupal\cdp_task_entity\CdpTaskEntityInterface */
+    /* @var $entity \Drupal\cdp_project_entity\CdpProjectEntityInterface */
     $row['id'] = $entity->id();
     $row['title'] = $entity->toLink();
-    $row['status'] = $entity->isEnabled() ? $this->t('Enabled') : $this->t('Disabled');
-    $row['uid']['data'] = [
-      '#theme' => 'username',
-      '#account' => $entity->getOwner(),
-    ];
-    $row['created'] = $this->dateFormatter->format($entity->getCreatedTime());
-    $row['changed'] = $this->dateFormatter->format($entity->getChangedTime());
     return $row + parent::buildRow($entity);
   }
 

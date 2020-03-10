@@ -1,0 +1,7 @@
+entity.cdp_project_entity.settings:
+  path: 'admin/structure/cdp-project-entity'
+  defaults:
+    _form: '\Drupal\cdp_project_entity\Form\CdpProjectEntitySettingsForm'
+    _title: 'Cdp project entity'
+  requirements:
+    _permission: 'administer cdp project entity'
