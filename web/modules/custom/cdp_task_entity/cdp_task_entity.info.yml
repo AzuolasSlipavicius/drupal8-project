@@ -1,6 +1,6 @@
-name: cdp_task_entity
+name: Cdp task entity
 type: module
-description: 'Provides a cdp_task_entity entity.'
+description: 'Provides a cdp task entity entity.'
 package: CDP
 core: 8.x
 core_version_requirement: ^8 || ^9

@@ -1,5 +1,5 @@
-administer cdp_task_entity:
-  title: 'Administer cdp_task_entity settings'
+administer cdp task entity:
+  title: 'Administer cdp task entity settings'
   restrict access: true
-access cdp_task_entity overview:
-  title: 'Access cdp_task_entity overview page'
+access cdp task entity overview:
+  title: 'Access cdp task entity overview page'
