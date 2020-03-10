@@ -1,7 +1,0 @@
-name: Cdp project entity
-type: module
-description: 'Provides a cdp project entity entity.'
-package: CDP
-core: 8.x
-core_version_requirement: ^8 || ^9
-configure: entity.cdp_project_entity.settings

@@ -1,5 +1,0 @@
-administer cdp project entity:
-  title: 'Administer cdp project entity settings'
-  restrict access: true
-access cdp project entity overview:
-  title: 'Access cdp project entity overview page'
