@@ -3,3 +3,11 @@ administer cdp project entity:
   restrict access: true
 access cdp project entity overview:
   title: 'Access cdp project entity overview page'
+delete project entity:
+  title: Delete project entity
+create project entity:
+  title: Create project entity
+view project entity:
+  title: View project entity
+edit project entity:
+  title: Edit project entity
