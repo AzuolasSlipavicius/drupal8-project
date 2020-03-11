@@ -10,7 +10,7 @@ id: cdp_task_entity.cdp_task_entity.field_tech_lead
 field_name: field_tech_lead
 entity_type: cdp_task_entity
 bundle: cdp_task_entity
-label: 'Tech lead'
+label: Techlead
 description: ''
 required: false
 translatable: false

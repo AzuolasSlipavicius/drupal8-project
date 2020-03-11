@@ -1,24 +1,24 @@
-uuid: 97015ad6-1873-4bf2-b542-ef2bb88cb5d3
+uuid: 86d03f00-4c20-420f-bf5a-362da3537583
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.cdp_task_entity.field_developer_
+    - field.storage.cdp_task_entity.field_time_techlead_needs
   module:
     - cdp_task_entity
-id: cdp_task_entity.cdp_task_entity.field_developer_
-field_name: field_developer_
+id: cdp_task_entity.cdp_task_entity.field_time_techlead_needs
+field_name: field_time_techlead_needs
 entity_type: cdp_task_entity
 bundle: cdp_task_entity
-label: 'Developer time'
+label: 'Time Techlead Needs'
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  min: !!float 0
+  min: 0
   max: null
   prefix: ''
   suffix: ''
-field_type: decimal
+field_type: integer

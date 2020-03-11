@@ -1,0 +1,25 @@
+uuid: 68911b32-746b-44fa-b143-373b5e89278b
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.admin
+  module:
+    - system
+  theme:
+    - cdp_theme
+id: administration_2
+theme: cdp_theme
+region: header
+weight: 0
+provider: null
+plugin: 'system_menu_block:admin'
+settings:
+  id: 'system_menu_block:admin'
+  label: Administration
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

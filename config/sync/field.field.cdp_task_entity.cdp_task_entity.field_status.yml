@@ -11,7 +11,7 @@ id: cdp_task_entity.cdp_task_entity.field_status
 field_name: field_status
 entity_type: cdp_task_entity
 bundle: cdp_task_entity
-label: Status
+label: 'Task status'
 description: ''
 required: true
 translatable: false
