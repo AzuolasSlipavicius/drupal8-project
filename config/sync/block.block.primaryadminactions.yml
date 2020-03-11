@@ -1,0 +1,18 @@
+uuid: bc67db3d-2f10-4f29-a091-5a96b23a7884
+langcode: en
+status: true
+dependencies:
+  theme:
+    - cdp_theme
+id: primaryadminactions
+theme: cdp_theme
+region: sidebar
+weight: 0
+provider: null
+plugin: local_actions_block
+settings:
+  id: local_actions_block
+  label: 'Primary admin actions'
+  provider: core
+  label_display: '0'
+visibility: {  }

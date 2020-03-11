@@ -1,0 +1,25 @@
+uuid: 6127bb94-537e-4f85-93d1-b09b0133da32
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.creaate-task
+  module:
+    - system
+  theme:
+    - cdp_theme
+id: creaatetask_2
+theme: cdp_theme
+region: header
+weight: 0
+provider: null
+plugin: 'system_menu_block:creaate-task'
+settings:
+  id: 'system_menu_block:creaate-task'
+  label: 'Create task'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

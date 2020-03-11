@@ -3,14 +3,14 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.cdp_task_entity.cdp_task_entity.field_a
+    - field.field.cdp_task_entity.cdp_task_entity.field_dev_time
     - field.field.cdp_task_entity.cdp_task_entity.field_developer
-    - field.field.cdp_task_entity.cdp_task_entity.field_developer_
     - field.field.cdp_task_entity.cdp_task_entity.field_projects
     - field.field.cdp_task_entity.cdp_task_entity.field_status
     - field.field.cdp_task_entity.cdp_task_entity.field_ta
     - field.field.cdp_task_entity.cdp_task_entity.field_tech_lead
-    - field.field.cdp_task_entity.cdp_task_entity.field_tech_lead_
+    - field.field.cdp_task_entity.cdp_task_entity.field_time_spent
+    - field.field.cdp_task_entity.cdp_task_entity.field_time_techlead_needs
   module:
     - cdp_task_entity
     - link
@@ -28,16 +28,14 @@ content:
     region: content
     settings: {  }
     third_party_settings: {  }
-  field_a:
-    weight: 16
+  field_dev_time:
+    weight: 20
     label: above
     settings:
       thousand_separator: ''
-      decimal_separator: .
-      scale: 2
       prefix_suffix: true
     third_party_settings: {  }
-    type: number_decimal
+    type: number_integer
     region: content
   field_developer:
     weight: 13
@@ -46,17 +44,6 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-    region: content
-  field_developer_:
-    weight: 15
-    label: above
-    settings:
-      thousand_separator: ''
-      decimal_separator: .
-      scale: 2
-      prefix_suffix: true
-    third_party_settings: {  }
-    type: number_decimal
     region: content
   field_projects:
     weight: 18
@@ -93,19 +80,26 @@ content:
     third_party_settings: {  }
     type: entity_reference_label
     region: content
-  field_tech_lead_:
-    weight: 14
+  field_time_spent:
+    weight: 21
     label: above
     settings:
       thousand_separator: ''
-      decimal_separator: .
-      scale: 2
       prefix_suffix: true
     third_party_settings: {  }
-    type: number_decimal
+    type: number_integer
+    region: content
+  field_time_techlead_needs:
+    weight: 19
+    label: above
+    settings:
+      thousand_separator: ''
+      prefix_suffix: true
+    third_party_settings: {  }
+    type: number_integer
     region: content
   title:
-    label: hidden
+    label: above
     type: string
     weight: -5
     region: content

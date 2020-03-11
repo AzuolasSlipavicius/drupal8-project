@@ -1,24 +1,24 @@
-uuid: 9aa79c11-419a-4ad6-b035-fa523553cabb
+uuid: 9e8b7f83-c51b-4a4f-aedc-6982aa428c5e
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.cdp_task_entity.field_tech_lead_
+    - field.storage.cdp_task_entity.field_time_spent
   module:
     - cdp_task_entity
-id: cdp_task_entity.cdp_task_entity.field_tech_lead_
-field_name: field_tech_lead_
+id: cdp_task_entity.cdp_task_entity.field_time_spent
+field_name: field_time_spent
 entity_type: cdp_task_entity
 bundle: cdp_task_entity
-label: 'Tech lead time'
+label: 'Time Spent'
 description: ''
 required: false
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  min: !!float 0
+  min: 0
   max: null
   prefix: ''
   suffix: ''
-field_type: decimal
+field_type: integer

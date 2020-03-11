@@ -8,4 +8,5 @@ id: administrator
 label: Administrator
 weight: 5
 is_admin: false
-permissions: {  }
+permissions:
+  - 'access content overview'

@@ -18,6 +18,7 @@ use Drupal\cdp_project_entity\CdpProjectEntityInterface;
  *     "view_builder" = "Drupal\Core\Entity\EntityViewBuilder",
  *     "list_builder" = "Drupal\cdp_project_entity\CdpProjectEntityListBuilder",
  *     "views_data" = "Drupal\views\EntityViewsData",
+ *     "access" = "Drupal\cdp_project_entity\CdpProjectEntityAccessControlHandler",
  *     "form" = {
  *       "add" = "Drupal\cdp_project_entity\Form\CdpProjectEntityForm",
  *       "edit" = "Drupal\cdp_project_entity\Form\CdpProjectEntityForm",

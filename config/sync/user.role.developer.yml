@@ -6,4 +6,14 @@ id: developer
 label: Developer
 weight: 3
 is_admin: null
-permissions: {  }
+permissions:
+  - 'access cdp project entity overview'
+  - 'access cdp task entity overview'
+  - 'access content overview'
+  - 'access contextual links'
+  - 'access in-place editing'
+  - 'access user profiles'
+  - 'administer cdp task entity'
+  - 'administer url aliases'
+  - 'create url aliases'
+  - 'view project entity'
