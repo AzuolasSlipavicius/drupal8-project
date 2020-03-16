@@ -1,0 +1,5 @@
+cdp_task.add_form:
+  route_name: entity.cdp_task.add_form
+  title: 'Add cdp task'
+  appears_on:
+    - entity.cdp_task.collection

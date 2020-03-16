@@ -1,0 +1,10 @@
+entity.cdp_task.settings:
+  title: Cdp task
+  description: Configure a Cdp task entity type
+  route_name:  entity.cdp_task.settings
+  parent: system.admin_structure
+entity.cdp_task.collection:
+  title: Cdp tasks
+  description: List of cdp tasks
+  route_name: entity.cdp_task.collection
+  parent: system.admin_content
