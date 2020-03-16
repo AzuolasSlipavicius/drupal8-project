@@ -1,0 +1,13 @@
+administer cdp task:
+  title: 'Administer cdp task settings'
+  restrict access: true
+access cdp task overview:
+  title: 'Access cdp task overview page'
+delete cdp task:
+  title: Delete cdp task
+create cdp task:
+  title: Create cdp task
+view cdp task:
+  title: View cdp task
+edit cdp task:
+  title: Edit cdp task
