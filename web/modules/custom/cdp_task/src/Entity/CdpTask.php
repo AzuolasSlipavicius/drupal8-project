@@ -116,7 +116,7 @@ class CdpTask extends ContentEntityBase implements CdpTaskInterface {
     $fields['task_status'] = BaseFieldDefinition::create('list_string')
       ->setLabel(t('Task Status'))
       ->setDefaultValue(TRUE)
-      ->setCardinality()
+      ->setCardinality(1)
       ->setSetting('allowed_values', [
         'To do' => t('To do'),
         'Done' => t('Done'),
