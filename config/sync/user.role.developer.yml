@@ -1,19 +1,16 @@
-uuid: 0a4756be-6e6f-4fb6-be92-dd5791575ce4
+uuid: f18040e2-2f9b-4955-9193-553cb15a28dd
 langcode: en
 status: true
 dependencies: {  }
 id: developer
 label: Developer
-weight: 3
+weight: -8
 is_admin: null
 permissions:
   - 'access cdp project entity overview'
-  - 'access cdp task entity overview'
-  - 'access content overview'
-  - 'access contextual links'
-  - 'access in-place editing'
+  - 'access cdp task overview'
   - 'access user profiles'
-  - 'administer cdp task entity'
-  - 'administer url aliases'
-  - 'create url aliases'
+  - 'create cdp task'
+  - 'edit cdp task'
+  - 'view cdp task'
   - 'view project entity'

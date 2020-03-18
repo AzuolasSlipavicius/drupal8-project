@@ -3,11 +3,10 @@ module:
   big_pipe: 0
   block: 0
   block_content: 0
-  book: 0
   breakpoint: 0
   cdp_project_entity: 0
   cdp_role_selection: 0
-  cdp_task_entity: 0
+  cdp_task: 0
   ckeditor: 0
   color: 0
   comment: 0
@@ -26,9 +25,6 @@ module:
   help: 0
   history: 0
   image: 0
-  inline_form_errors: 0
-  layout_builder: 0
-  layout_discovery: 0
   link: 0
   mail_login: 0
   menu_ui: 0
@@ -57,7 +53,6 @@ theme:
   classy: 0
   bartik: 0
   seven: 0
-  cdp_theme: 0
 profile: standard
 _core:
   default_config_hash: R4IF-ClDHXxblLcG0L7MgsLvfBIMAvi_skumNFQwkDc

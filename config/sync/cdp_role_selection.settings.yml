@@ -1,19 +1,9 @@
-role_selection:
-  1: '1'
-  2: '2'
-  0: 0
-  3: 0
-  4: 0
 roles:
   developer: developer
   tech_lead: tech_lead
   anonymous: 0
   authenticated: 0
   administrator: 0
-displayRoles:
-  developer: Developer
-  tech_lead: 'Tech lead'
-  administrator: Administrator
 display_roles:
   developer: Developer
   tech_lead: 'Tech lead'
