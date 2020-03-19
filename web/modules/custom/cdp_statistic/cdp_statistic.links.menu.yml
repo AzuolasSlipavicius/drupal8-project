@@ -1,0 +1,7 @@
+cdp_statistic.display:
+  title: Statistic
+  description: Display cdp statistic page
+  route_name:  cdp_statistic.display
+  parent: main
+  menu_name: main
+  weight: 10

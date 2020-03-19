@@ -1,0 +1,6 @@
+cdp_statistic.display:
+  path: '/statistic'
+  defaults:
+    _controller: '\Drupal\cdp_statistic\Controller\CdpStatisticController::build'
+  requirements:
+    _permission: 'access content'

@@ -1,0 +1,4 @@
+administer cdp_statistic configuration:
+  title: 'Administer cdp_statistic configuration'
+  description: 'Optional description.'
+  restrict access: true

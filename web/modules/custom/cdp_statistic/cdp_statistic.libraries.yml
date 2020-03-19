@@ -1,0 +1,7 @@
+# Custom module library for general purposes.
+chart:
+  js:
+    'https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js': { type: external, minified: true }
+    js/main.js: {}
+  dependencies:
+    - core/jquery
