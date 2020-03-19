@@ -130,14 +130,11 @@ class CdpTask extends ContentEntityBase implements CdpTaskInterface {
       ->setLabel(t('Task Status'))
       ->setDefaultValue(TRUE)
       ->setCardinality(1)
-      ->setSetting(
-        'allowed_values',
-        [
-          'To do' => t('To do'),
-          'Done' => t('Done'),
-          'In progress' => t('In progress')
-        ]
-      )
+      ->setSetting('allowed_values', [
+        'To do' => t('To do'),
+        'Done' => t('Done'),
+        'In progress' => t('In progress')
+      ])
       ->setDefaultValue('To do')
       ->setDisplayOptions(
         'form',
