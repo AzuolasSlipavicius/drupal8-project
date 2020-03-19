@@ -1,27 +1,24 @@
-uuid: f178bd19-42aa-4730-903a-2bf2e5b49bf2
+uuid: 8a116018-e92d-4428-85ce-09c6e827dbd5
 langcode: en
 status: true
 dependencies:
   config:
-    - field.storage.cdp_task_entity.field_developer
-    - field.storage.cdp_task_entity.field_status
-    - field.storage.cdp_task_entity.field_tech_lead
     - system.menu.main
     - user.role.administrator
-    - user.role.authenticated
     - user.role.developer
     - user.role.tech_lead
   module:
-    - cdp_task_entity
+    - cdp_task
+    - link
     - options
     - text
     - user
-id: my_tasks
-label: 'My tasks'
+id: cdp_my_tasks_view
+label: 'cdp My Tasks view'
 module: views
 description: ''
 tag: ''
-base_table: cdp_task_entity
+base_table: cdp_task_field_data
 base_field: id
 display:
   default:
@@ -34,7 +31,6 @@ display:
         type: role
         options:
           role:
-            authenticated: authenticated
             developer: developer
             tech_lead: tech_lead
             administrator: administrator
@@ -79,12 +75,33 @@ display:
             next: ››
       style:
         type: table
+        options:
+          grouping: {  }
+          row_class: ''
+          default_row_class: true
+          override: true
+          sticky: false
+          caption: ''
+          summary: ''
+          description: ''
+          columns:
+            title: title
+          info:
+            title:
+              sortable: true
+              default_sort_order: asc
+              align: ''
+              separator: ''
+              empty_column: false
+              responsive: ''
+          default: '-1'
+          empty_table: false
       row:
-        type: fields
+        type: 'entity:cdp_task'
       fields:
         title:
           id: title
-          table: cdp_task_entity
+          table: cdp_task_field_data
           field: title
           relationship: none
           group_type: group
@@ -149,7 +166,7 @@ display:
           plugin_id: field
         description__value:
           id: description__value
-          table: cdp_task_entity
+          table: cdp_task_field_data
           field: description__value
           relationship: none
           group_type: group
@@ -208,80 +225,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
-          entity_type: cdp_task_entity
+          entity_type: cdp_task
           entity_field: description
           plugin_id: field
-        field_developer:
-          id: field_developer
-          table: cdp_task_entity__field_developer
-          field: field_developer
+        task_status:
+          id: task_status
+          table: cdp_task_field_data
+          field: task_status
           relationship: none
           group_type: group
           admin_label: ''
-          label: Developer
-          exclude: false
-          alter:
-            alter_text: false
-            text: ''
-            make_link: false
-            path: ''
-            absolute: false
-            external: false
-            replace_spaces: false
-            path_case: none
-            trim_whitespace: false
-            alt: ''
-            rel: ''
-            link_class: ''
-            prefix: ''
-            suffix: ''
-            target: ''
-            nl2br: false
-            max_length: 0
-            word_boundary: true
-            ellipsis: true
-            more_link: false
-            more_link_text: ''
-            more_link_path: ''
-            strip_tags: false
-            trim: false
-            preserve_tags: ''
-            html: false
-          element_type: ''
-          element_class: ''
-          element_label_type: ''
-          element_label_class: ''
-          element_label_colon: true
-          element_wrapper_type: ''
-          element_wrapper_class: ''
-          element_default_classes: true
-          empty: ''
-          hide_empty: false
-          empty_zero: false
-          hide_alter_empty: true
-          click_sort_column: target_id
-          type: entity_reference_label
-          settings:
-            link: true
-          group_column: target_id
-          group_columns: {  }
-          group_rows: true
-          delta_limit: 0
-          delta_offset: 0
-          delta_reversed: false
-          delta_first_last: false
-          multi_type: separator
-          separator: ', '
-          field_api_classes: false
-          plugin_id: field
-        field_status:
-          id: field_status
-          table: cdp_task_entity__field_status
-          field: field_status
-          relationship: none
-          group_type: group
-          admin_label: ''
-          label: 'Task status'
+          label: 'Task Status'
           exclude: false
           alter:
             alter_text: false
@@ -335,15 +289,17 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+          entity_type: cdp_task
+          entity_field: task_status
           plugin_id: field
-        field_tech_lead:
-          id: field_tech_lead
-          table: cdp_task_entity__field_tech_lead
-          field: field_tech_lead
+        techlead:
+          id: techlead
+          table: cdp_task_field_data
+          field: techlead
           relationship: none
           group_type: group
           admin_label: ''
-          label: Techlead
+          label: 'Techlead name'
           exclude: false
           alter:
             alter_text: false
@@ -398,11 +354,410 @@ display:
           multi_type: separator
           separator: ', '
           field_api_classes: false
+          entity_type: cdp_task
+          entity_field: techlead
+          plugin_id: field
+        techlead_time:
+          id: techlead_time
+          table: cdp_task_field_data
+          field: techlead_time
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Time Techlead Needs'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: cdp_task
+          entity_field: techlead_time
+          plugin_id: field
+        developer:
+          id: developer
+          table: cdp_task_field_data
+          field: developer
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Developer name'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: cdp_task
+          entity_field: developer
+          plugin_id: field
+        developer_time:
+          id: developer_time
+          table: cdp_task_field_data
+          field: developer_time
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Time Developer Needs'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: cdp_task
+          entity_field: developer_time
+          plugin_id: field
+        total_time:
+          id: total_time
+          table: cdp_task_field_data
+          field: total_time
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Time Spent'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: value
+          type: number_integer
+          settings:
+            thousand_separator: ''
+            prefix_suffix: true
+          group_column: value
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: cdp_task
+          entity_field: total_time
+          plugin_id: field
+        project:
+          id: project
+          table: cdp_task_field_data
+          field: project
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: Project
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: target_id
+          type: entity_reference_label
+          settings:
+            link: true
+          group_column: target_id
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: cdp_task
+          entity_field: project
+          plugin_id: field
+        link__uri:
+          id: link__uri
+          table: cdp_task_field_data
+          field: link__uri
+          relationship: none
+          group_type: group
+          admin_label: ''
+          label: 'Task link'
+          exclude: false
+          alter:
+            alter_text: false
+            text: ''
+            make_link: false
+            path: ''
+            absolute: false
+            external: false
+            replace_spaces: false
+            path_case: none
+            trim_whitespace: false
+            alt: ''
+            rel: ''
+            link_class: ''
+            prefix: ''
+            suffix: ''
+            target: ''
+            nl2br: false
+            max_length: 0
+            word_boundary: true
+            ellipsis: true
+            more_link: false
+            more_link_text: ''
+            more_link_path: ''
+            strip_tags: false
+            trim: false
+            preserve_tags: ''
+            html: false
+          element_type: ''
+          element_class: ''
+          element_label_type: ''
+          element_label_class: ''
+          element_label_colon: true
+          element_wrapper_type: ''
+          element_wrapper_class: ''
+          element_default_classes: true
+          empty: ''
+          hide_empty: false
+          empty_zero: false
+          hide_alter_empty: true
+          click_sort_column: uri
+          type: link
+          settings:
+            trim_length: 80
+            url_only: false
+            url_plain: false
+            rel: '0'
+            target: '0'
+          group_column: ''
+          group_columns: {  }
+          group_rows: true
+          delta_limit: 0
+          delta_offset: 0
+          delta_reversed: false
+          delta_first_last: false
+          multi_type: separator
+          separator: ', '
+          field_api_classes: false
+          entity_type: cdp_task
+          entity_field: link
           plugin_id: field
       filters:
         title:
           id: title
-          table: cdp_task_entity
+          table: cdp_task_field_data
           field: title
           relationship: none
           group_type: group
@@ -442,69 +797,86 @@ display:
             default_group: All
             default_group_multiple: {  }
             group_items: {  }
-          entity_type: cdp_task_entity
+          entity_type: cdp_task
           entity_field: title
           plugin_id: string
-        field_status_value:
-          id: field_status_value
-          table: cdp_task_entity__field_status
-          field: field_status_value
+        task_status:
+          id: task_status
+          table: cdp_task_field_data
+          field: task_status
           relationship: none
           group_type: group
           admin_label: ''
-          operator: or
-          value: {  }
+          operator: '='
+          value: ''
           group: 1
           exposed: true
           expose:
-            operator_id: field_status_value_op
+            operator_id: task_status_op
             label: 'Task Status'
-            description: ''
+            description: null
             use_operator: false
-            operator: field_status_value_op
+            operator: task_status_op
             operator_limit_selection: false
             operator_list: {  }
-            identifier: field_status_value
+            identifier: task_status
             required: false
             remember: false
             multiple: false
             remember_roles:
               authenticated: authenticated
-              anonymous: '0'
-              developer: '0'
-              tech_lead: '0'
-              administrator: '0'
-            reduce: false
-          is_grouped: false
+            placeholder: null
+          is_grouped: true
           group_info:
-            label: ''
+            label: 'Task Status'
             description: ''
-            identifier: ''
+            identifier: task_status
             optional: true
             widget: select
             multiple: false
             remember: false
             default_group: All
             default_group_multiple: {  }
-            group_items: {  }
-          reduce_duplicates: false
-          plugin_id: list_field
+            group_items:
+              1:
+                title: 'To do'
+                operator: '='
+                value: 'To do'
+              2:
+                title: 'In progress'
+                operator: '='
+                value: 'In progress'
+              3:
+                title: Done
+                operator: '='
+                value: Done
+          entity_type: cdp_task
+          entity_field: task_status
+          plugin_id: string
       sorts: {  }
-      title: 'My tasks'
+      title: 'My Tasks'
       header:
         area:
           id: area
           table: views
           field: area
+          relationship: none
+          group_type: group
+          admin_label: ''
+          empty: false
+          tokenize: false
+          content:
+            value: "<button type=\"button\">\r\n<a href=\"/admin/content/cdp-task/add\">Add new task</a>\r\n</button>"
+            format: full_html
           plugin_id: text
       footer: {  }
       empty: {  }
       relationships: {  }
       arguments:
-        field_developer_target_id:
-          id: field_developer_target_id
-          table: cdp_task_entity__field_developer
-          field: field_developer_target_id
+        developer:
+          id: developer
+          table: cdp_task_field_data
+          field: developer
           relationship: none
           group_type: group
           admin_label: ''
@@ -534,12 +906,10 @@ display:
           validate_options: {  }
           break_phrase: false
           not: false
+          entity_type: cdp_task
+          entity_field: developer
           plugin_id: numeric
       display_extenders: {  }
-      filter_groups:
-        operator: AND
-        groups:
-          1: AND
     cache_metadata:
       max-age: -1
       contexts:
@@ -549,10 +919,7 @@ display:
         - url.query_args
         - user
         - user.roles
-      tags:
-        - 'config:field.storage.cdp_task_entity.field_developer'
-        - 'config:field.storage.cdp_task_entity.field_status'
-        - 'config:field.storage.cdp_task_entity.field_tech_lead'
+      tags: {  }
   page_1:
     display_plugin: page
     id: page_1
@@ -563,7 +930,12 @@ display:
       path: my-tasks
       menu:
         type: normal
-        title: 'My tasks'
+        title: 'My Tasks'
+        description: ''
+        expanded: false
+        parent: ''
+        weight: 0
+        context: '0'
         menu_name: main
     cache_metadata:
       max-age: -1
@@ -574,7 +946,4 @@ display:
         - url.query_args
         - user
         - user.roles
-      tags:
-        - 'config:field.storage.cdp_task_entity.field_developer'
-        - 'config:field.storage.cdp_task_entity.field_status'
-        - 'config:field.storage.cdp_task_entity.field_tech_lead'
+      tags: {  }

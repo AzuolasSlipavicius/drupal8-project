@@ -1,19 +1,16 @@
-uuid: 7de82945-63cc-4323-b0a8-20893cd24ad6
+uuid: 41bd2a1b-5294-4693-8561-d7980c847ad9
 langcode: en
 status: true
 dependencies: {  }
 id: tech_lead
 label: 'Tech lead'
-weight: 4
+weight: -7
 is_admin: null
 permissions:
   - 'access cdp project entity overview'
-  - 'access cdp task entity overview'
-  - 'access content overview'
-  - 'access contextual links'
-  - 'access in-place editing'
+  - 'access cdp task overview'
   - 'access user profiles'
-  - 'administer cdp task entity'
-  - 'administer url aliases'
-  - 'create url aliases'
+  - 'create cdp task'
+  - 'edit cdp task'
+  - 'view cdp task'
   - 'view project entity'

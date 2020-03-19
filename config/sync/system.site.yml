@@ -1,6 +1,6 @@
-uuid: ba6bb205-2b25-46f3-8fd9-2e21d3cfa646
-name: cdp
-mail: cdp@cdp.cdp
+uuid: 111301e1-0275-4f89-a0bb-416588b40214
+name: 'Drush Site-Install'
+mail: admin@example.com
 slogan: ''
 page:
   403: ''

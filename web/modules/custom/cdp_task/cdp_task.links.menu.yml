@@ -8,3 +8,6 @@ entity.cdp_task.collection:
   description: List of cdp tasks
   route_name: entity.cdp_task.collection
   parent: system.admin_content
+entity.cdp_task.add:
+  title: Add task
+  route_name: enity.cdp.add

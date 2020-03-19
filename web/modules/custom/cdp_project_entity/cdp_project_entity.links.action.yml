@@ -3,3 +3,4 @@ cdp_project_entity.add_form:
   title: 'Add cdp project entity'
   appears_on:
     - entity.cdp_project_entity.collection
+    - project.add

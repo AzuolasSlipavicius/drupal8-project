@@ -1,4 +1,4 @@
-uuid: 47b94139-af8f-4b4c-b17d-6437d647fade
+uuid: ee97c9f8-377c-4066-8a25-12f576599d63
 langcode: en
 status: true
 dependencies: {  }
@@ -7,7 +7,7 @@ _core:
 id: feedback
 label: 'Website feedback'
 recipients:
-  - cdp@cdp.cdp
+  - admin@example.com
 reply: ''
 weight: 0
 message: 'Your message has been sent.'

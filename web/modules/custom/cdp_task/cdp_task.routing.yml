@@ -5,3 +5,6 @@ entity.cdp_task.settings:
     _title: 'Cdp task'
   requirements:
     _permission: 'administer cdp task'
+
+entity.cdp_task.add:
+  path: 'tasker'
