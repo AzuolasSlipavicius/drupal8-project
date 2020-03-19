@@ -1,5 +1,5 @@
 cdp_statistic.display:
-  path: '/statistic'
+  path: '/statistics'
   defaults:
     _controller: '\Drupal\cdp_statistic\Controller\CdpStatisticController::build'
   requirements:
