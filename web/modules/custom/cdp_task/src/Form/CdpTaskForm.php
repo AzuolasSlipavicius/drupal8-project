@@ -10,6 +10,34 @@ use Drupal\Core\Form\FormStateInterface;
  */
 class CdpTaskForm extends ContentEntityForm {
 
+  function _cdp_task_get_role(){
+    $roles = ['developer', 'tech_lead'];
+    foreach ($roles as $role) {
+      if (\Drupal\user\Entity\User::load(\Drupal::currentUser()->id())->hasRole($role)) {
+        return $role;
+      }
+    }
+  }
+//test
+  public function buildForm(array $form, FormStateInterface $form_state) {
+
+    $form = parent::buildForm($form,$form_state);
+
+    $current_role = _cdp_task_get_role();
+
+    if ($current_role === 'developer') {
+      $form['techlead']['widget']['#access'] = false;
+      $form['techlead']['widget']['#required'] = false;
+      $form['techlead_time']['widget']['#access'] = false;
+    } elseif ($current_role === 'tech_lead') {
+      $form['developer']['widget']['#access'] = false;
+      $form['developer']['widget']['#required'] = false;
+      $form['developer_time']['widget']['#access'] = false;
+    }
+
+    return $form;
+  }
+
   /**
    * {@inheritdoc}
    */

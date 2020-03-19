@@ -5,6 +5,7 @@
  * Provides a cdp task entity type.
  */
 
+use Drupal\Core\Form\FormStateInterface as FormStateInterfaceAlias;
 use Drupal\Core\Render\Element;
 
 /**
@@ -32,5 +33,32 @@ function cdp_task_theme() {
 function template_preprocess_cdp_task(array &$variables) {
   foreach (Element::children($variables['elements']) as $key) {
     $variables['content'][$key] = $variables['elements'][$key];
+  }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+//function cdp_task_form_alter(&$form, FormStateInterfaceAlias $form_state, $form_id) {
+//  if($form['#id'] === 'cdp-task-add-form' || $form['#id'] === 'cdp-task-edit-form') {
+//    $current_role = _cdp_task_get_role();
+//    if ($current_role === 'developer') {
+//      $form['techlead']['widget']['#access'] = false;
+//      $form['techlead']['widget']['#required'] = false;
+//      $form['techlead_time']['widget']['#access'] = false;
+//    } elseif ($current_role === 'tech_lead') {
+//      $form['developer']['widget']['#access'] = false;
+//      $form['developer']['widget']['#required'] = false;
+//      $form['developer_time']['widget']['#access'] = false;
+//    }
+//  }
+//}
+
+function _cdp_task_get_role(){
+  $roles = ['developer', 'tech_lead'];
+  foreach ($roles as $role) {
+    if (\Drupal\user\Entity\User::load(\Drupal::currentUser()->id())->hasRole($role)) {
+      return $role;
+    }
   }
 }

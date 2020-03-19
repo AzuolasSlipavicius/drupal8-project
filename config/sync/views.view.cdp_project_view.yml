@@ -1,19 +1,18 @@
-uuid: def2ae55-3b6a-469d-8b6b-011b7bf0292c
+uuid: c836f086-10bd-4b44-a0f5-d73188a78dae
 langcode: en
 status: true
 dependencies:
   config:
     - system.menu.main
     - user.role.administrator
-    - user.role.authenticated
     - user.role.developer
     - user.role.tech_lead
   module:
     - cdp_project_entity
     - text
     - user
-id: project_view
-label: 'Project view'
+id: cdp_project_view
+label: 'cdp Project view'
 module: views
 description: ''
 tag: ''
@@ -30,7 +29,6 @@ display:
         type: role
         options:
           role:
-            authenticated: authenticated
             developer: developer
             tech_lead: tech_lead
             administrator: administrator
@@ -86,7 +84,6 @@ display:
           description: ''
           columns:
             title: title
-            description__value: description__value
           info:
             title:
               sortable: true
@@ -95,17 +92,10 @@ display:
               separator: ''
               empty_column: false
               responsive: ''
-            description__value:
-              sortable: false
-              default_sort_order: asc
-              align: ''
-              separator: ''
-              empty_column: false
-              responsive: ''
           default: '-1'
           empty_table: false
       row:
-        type: fields
+        type: 'entity:cdp_project_entity'
       fields:
         title:
           id: title
@@ -158,7 +148,7 @@ display:
           click_sort_column: value
           type: string
           settings:
-            link_to_entity: true
+            link_to_entity: false
           group_column: value
           group_columns: {  }
           group_rows: true
@@ -283,7 +273,7 @@ display:
           entity_field: title
           plugin_id: string
       sorts: {  }
-      title: 'Project view'
+      title: Projects
       header:
         area:
           id: area
@@ -319,15 +309,10 @@ display:
     position: 1
     display_options:
       display_extenders: {  }
-      path: projects
+      path: project
       menu:
         type: normal
         title: Projects
-        description: ''
-        expanded: false
-        parent: ''
-        weight: 0
-        context: '0'
         menu_name: main
     cache_metadata:
       max-age: -1
