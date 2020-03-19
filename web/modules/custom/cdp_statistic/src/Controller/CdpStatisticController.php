@@ -19,9 +19,9 @@ class CdpStatisticController extends ControllerBase {
    $data = [];
    foreach ($raw_data as $entity) {
     $data['labels'][] = $entity->get('title')->value;
-    $data['datasets'][0]['label'] = 'Techlead time';
-    $data['datasets'][1]['label'] = 'Developer time';
-    $data['datasets'][2]['label'] = 'Actual time';
+    $data['datasets'][0]['label'] = t('Techlead time');
+    $data['datasets'][1]['label'] = t('Developer time');
+    $data['datasets'][2]['label'] = t('Actual time');
 
     $data['datasets'][0]['data'][] = $entity->get('techlead_time')->value;
     $data['datasets'][1]['data'][] = $entity->get('developer_time')->value;

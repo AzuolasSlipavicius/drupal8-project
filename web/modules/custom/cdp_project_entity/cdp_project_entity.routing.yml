@@ -5,3 +5,5 @@ entity.cdp_project_entity.settings:
     _title: 'Cdp project entity'
   requirements:
     _permission: 'administer cdp project entity'
+project.add:
+  path: 'project'

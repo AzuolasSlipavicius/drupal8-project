@@ -1,5 +1,5 @@
 cdp_statistic.display:
-  title: Statistic
+  title: Statistics
   description: Display cdp statistic page
   route_name:  cdp_statistic.display
   parent: main
