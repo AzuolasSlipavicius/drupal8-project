@@ -18,8 +18,8 @@ function cdp_user_login_form_alter_form_user_login_form_alter(&$form, FormStateI
   $form['name']['#access'] = FALSE;
   $form['mail'] = [
     '#type' => 'email',
-    '#title' => t('E-mail'),
-    '#description' => t('Enter your CDP Project user mail.'),
+    '#title' => t('Email'),
+    '#description' => t('Enter your user email.'),
     '#required' => TRUE,
     '#weight' => -1,
   ];
