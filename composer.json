@@ -21,9 +21,8 @@
         "drupal/core-project-message": "^8.8",
         "drupal/core-recommended": "^8.8",
         "drupal/devel": "^2.1",
-        "drupal/email_registration": "^1.0",
-        "drupal/mail_login": "^1.0",
         "drupal/realistic_dummy_content": "^2.0",
+        "drupal/restui": "^1.17",
         "drush/drush": "^10.2"
     },
     "require-dev": {

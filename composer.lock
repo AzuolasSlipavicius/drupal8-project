@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "90df0ccc76a4dbeb198fc2efe7020596",
+    "content-hash": "767adc5abcd6bfbea52d76ca9a413205",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1555,6 +1555,63 @@
             "time": "2019-06-08T11:03:04+00:00"
         },
         {
+            "name": "drupal/content_fixtures",
+            "version": "1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/content_fixtures.git",
+                "reference": "8.x-1.1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/content_fixtures-8.x-1.1.zip",
+                "reference": "8.x-1.1",
+                "shasum": "26ef194622d202bdacb5c06a92239c2d343997f3"
+            },
+            "require": {
+                "drupal/core": "~8.0",
+                "php": ">=7.0.0"
+            },
+            "suggest": {
+                "joshtronic/php-loremipsum": "Lorem ipsum generator for dummy content."
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.1",
+                    "datestamp": "1565254988",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                },
+                "drush": {
+                    "services": {
+                        "drush.services.yml": "^9"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "Łukasz Zaroda",
+                    "homepage": "https://www.drupal.org/user/1890152",
+                    "email": "luken@luken-tech.pl"
+                }
+            ],
+            "description": "Module privides an API for creating generators of dummy content in a way similar to the 'DoctrineFixturesBundle'.",
+            "homepage": "https://www.drupal.org/project/content_fixtures",
+            "support": {
+                "source": "https://git.drupalcode.org/project/content_fixtures"
+            }
+        },
+        {
             "name": "drupal/core",
             "version": "8.8.2",
             "source": {
@@ -2039,36 +2096,34 @@
             }
         },
         {
-            "name": "drupal/email_registration",
-            "version": "1.0.0",
+            "name": "drupal/realistic_dummy_content",
+            "version": "2.0.0",
             "source": {
                 "type": "git",
-                "url": "https://git.drupalcode.org/project/email_registration.git",
-                "reference": "8.x-1.0"
+                "url": "https://git.drupalcode.org/project/realistic_dummy_content.git",
+                "reference": "8.x-2.0"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/email_registration-8.x-1.0.zip",
-                "reference": "8.x-1.0",
-                "shasum": "f960f489f4273212b924a2d54e6cb8e43adb633e"
+                "url": "https://ftp.drupal.org/files/projects/realistic_dummy_content-8.x-2.0.zip",
+                "reference": "8.x-2.0",
+                "shasum": "a51f9163cadb7a8b6db75e0966ab16d2d4bc295b"
             },
             "require": {
-                "drupal/core": "*"
-            },
-            "conflict": {
-                "drupal/commerce": "<2.12"
+                "drupal/core": "~8.0",
+                "drupal/realistic_dummy_content_api": "*"
             },
             "require-dev": {
-                "drupal/commerce": "^2.0"
+                "drupal/devel": "*"
             },
             "type": "drupal-module",
             "extra": {
                 "branch-alias": {
-                    "dev-1.x": "1.x-dev"
+                    "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0",
-                    "datestamp": "1580243964",
+                    "version": "8.x-2.0",
+                    "datestamp": "1505495944",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2077,62 +2132,38 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
-                    "name": "Greg Knaddison (greggles)",
-                    "homepage": "https://www.drupal.org/u/greggles",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Andrey Postnikov (andypost)",
-                    "homepage": "https://www.drupal.org/u/andypost",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Chris Herberte",
-                    "homepage": "https://www.drupal.org/u/chris-herberte",
-                    "role": "Maintainer"
-                },
-                {
-                    "name": "Moshe Weitzman (moshe weitzman)",
-                    "homepage": "https://www.drupal.org/u/moshe-weitzman",
-                    "role": "Maintainer"
+                    "name": "alberto56",
+                    "homepage": "https://www.drupal.org/user/245583"
                 }
             ],
-            "description": "Allows users to register with an email address as their username.",
-            "homepage": "https://www.drupal.org/project/email_registration",
+            "description": "Uses the Realistic Dummy Content API, and custom demo images in a specific directory structure, to make customized generated content. Do not enable on production sites.",
+            "homepage": "https://www.drupal.org/project/realistic_dummy_content",
             "support": {
-                "source": "http://cgit.drupalcode.org/email_registration",
-                "issues": "http://drupal.org/project/issues/email_registration"
+                "source": "https://git.drupalcode.org/project/realistic_dummy_content"
             }
         },
         {
-            "name": "drupal/mail_login",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/mail_login.git",
-                "reference": "8.x-1.0"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/mail_login-8.x-1.0.zip",
-                "reference": "8.x-1.0",
-                "shasum": "a5913a903eb61760b177bf4037d7716a4f4cf29e"
-            },
+            "name": "drupal/realistic_dummy_content_api",
+            "version": "2.0.0",
             "require": {
-                "drupal/core": "~8.0"
+                "drupal/core": "~8.0",
+                "drupal/realistic_dummy_content": "self.version"
             },
-            "type": "drupal-module",
+            "require-dev": {
+                "drupal/devel": "*"
+            },
+            "type": "metapackage",
             "extra": {
                 "branch-alias": {
-                    "dev-1.x": "1.x-dev"
+                    "dev-2.x": "2.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0",
-                    "datestamp": "1515260884",
+                    "version": "8.x-2.0",
+                    "datestamp": "1505495944",
                     "security-coverage": {
                         "status": "covered",
                         "message": "Covered by Drupal's security advisory policy"
@@ -2141,26 +2172,77 @@
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
             "license": [
-                "GPL-2.0+"
+                "GPL-2.0-or-later"
             ],
             "authors": [
                 {
-                    "name": "Mohammad AlQanneh",
-                    "homepage": "https://www.drupal.org/u/mqanneh",
-                    "role": "Maintainer"
+                    "name": "alberto56",
+                    "homepage": "https://www.drupal.org/user/245583"
                 }
             ],
-            "description": "This module enables users to login by email address.",
-            "homepage": "https://www.drupal.org/project/mail_login",
-            "keywords": [
-                "drupal",
-                "php",
-                "user"
-            ],
+            "description": "Allows enabled modules to generate kick-ass demo content (see the Realistic Dummy Content module for an example of how to do this). Do not enable on production sites.",
+            "homepage": "https://www.drupal.org/project/realistic_dummy_content",
             "support": {
-                "source": "http://cgit.drupalcode.org/mail_login",
-                "issues": "http://drupal.org/project/issues/mail_login",
-                "email": "mqanneh@gmail.com"
+                "source": "https://git.drupalcode.org/project/realistic_dummy_content"
+            }
+        },
+        {
+            "name": "drupal/restui",
+            "version": "1.17.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupalcode.org/project/restui.git",
+                "reference": "8.x-1.17"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/restui-8.x-1.17.zip",
+                "reference": "8.x-1.17",
+                "shasum": "2fff1b74759d5e490884d002330ad04d1bf241ba"
+            },
+            "require": {
+                "drupal/core": "^8.2.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-1.x": "1.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-1.17",
+                    "datestamp": "1557845581",
+                    "security-coverage": {
+                        "status": "covered",
+                        "message": "Covered by Drupal's security advisory policy"
+                    }
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0-or-later"
+            ],
+            "authors": [
+                {
+                    "name": "-enzo-",
+                    "homepage": "https://www.drupal.org/user/294937"
+                },
+                {
+                    "name": "clemens.tolboom",
+                    "homepage": "https://www.drupal.org/user/125814"
+                },
+                {
+                    "name": "juampynr",
+                    "homepage": "https://www.drupal.org/user/682736"
+                },
+                {
+                    "name": "klausi",
+                    "homepage": "https://www.drupal.org/user/262198"
+                }
+            ],
+            "description": "Provides a user interface to manage REST resources.",
+            "homepage": "https://www.drupal.org/project/restui",
+            "support": {
+                "source": "https://git.drupalcode.org/project/restui"
             }
         },
         {
