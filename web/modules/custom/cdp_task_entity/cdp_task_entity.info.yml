@@ -1,9 +1,0 @@
-name: Cdp task entity
-type: module
-description: 'Provides a cdp task entity entity.'
-package: CDP
-core: 8.x
-core_version_requirement: ^8 || ^9
-dependencies:
-  - drupal:text
-configure: entity.cdp_task_entity.settings

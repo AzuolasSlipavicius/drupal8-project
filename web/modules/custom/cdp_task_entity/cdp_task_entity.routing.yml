@@ -1,7 +1,0 @@
-entity.cdp_task_entity.settings:
-  path: 'admin/structure/cdp-task-entity'
-  defaults:
-    _form: '\Drupal\cdp_task_entity\Form\CdpTaskEntitySettingsForm'
-    _title: 'Cdp task entity'
-  requirements:
-    _permission: 'administer cdp task entity'
