@@ -1,0 +1,21 @@
+uuid: 0cab0f85-d133-461e-b47a-0f2f44a57481
+langcode: en
+status: true
+dependencies:
+  module:
+    - cdp_project_entity
+    - serialization
+    - user
+id: entity.cdp_project_entity
+plugin_id: 'entity:cdp_project_entity'
+granularity: resource
+configuration:
+  methods:
+    - GET
+    - POST
+    - DELETE
+    - PATCH
+  formats:
+    - json
+  authentication:
+    - cookie

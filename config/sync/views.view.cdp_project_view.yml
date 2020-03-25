@@ -274,20 +274,7 @@ display:
           plugin_id: string
       sorts: {  }
       title: Projects
-      header:
-        area:
-          id: area
-          table: views
-          field: area
-          relationship: none
-          group_type: group
-          admin_label: ''
-          empty: false
-          tokenize: false
-          content:
-            value: "<button type=\"button\">\r\n<a href=\"/admin/content/cdp-project-entity/add\">Add new project</a>\r\n</button>"
-            format: full_html
-          plugin_id: text
+      header: {  }
       footer: {  }
       empty: {  }
       relationships: {  }

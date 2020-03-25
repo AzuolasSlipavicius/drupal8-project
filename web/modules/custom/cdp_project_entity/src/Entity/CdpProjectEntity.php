@@ -47,6 +47,10 @@ use Drupal\cdp_project_entity\CdpProjectEntityInterface;
  */
 class CdpProjectEntity extends ContentEntityBase implements CdpProjectEntityInterface {
 
+  public function getCdpProjectEntityValue($value) {
+    return $this->get($value)->value;
+  }
+
   /**
    * {@inheritdoc}
    */

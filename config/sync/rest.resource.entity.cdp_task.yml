@@ -1,0 +1,21 @@
+uuid: 75d95402-c2b6-4836-bc4e-d299a62abd10
+langcode: en
+status: true
+dependencies:
+  module:
+    - cdp_task
+    - serialization
+    - user
+id: entity.cdp_task
+plugin_id: 'entity:cdp_task'
+granularity: resource
+configuration:
+  methods:
+    - GET
+    - POST
+    - DELETE
+    - PATCH
+  formats:
+    - json
+  authentication:
+    - cookie

@@ -4,20 +4,26 @@ module:
   block: 0
   block_content: 0
   breakpoint: 0
+  cdp_boom: 0
   cdp_project_entity: 0
   cdp_role_selection: 0
+  cdp_statistic: 0
   cdp_task: 0
+  cdp_user_login_form_alter: 0
   ckeditor: 0
   color: 0
   comment: 0
   config: 0
+  config_translation: 0
   contact: 0
+  content_fixtures: 0
   contextual: 0
   datetime: 0
   dblog: 0
+  devel: 0
+  devel_generate: 0
   dynamic_page_cache: 0
   editor: 0
-  email_registration: 0
   field: 0
   field_ui: 0
   file: 0
@@ -25,8 +31,9 @@ module:
   help: 0
   history: 0
   image: 0
+  language: 0
   link: 0
-  mail_login: 0
+  locale: 0
   menu_ui: 0
   node: 0
   options: 0
@@ -35,8 +42,14 @@ module:
   path_alias: 0
   quickedit: 0
   rdf: 0
+  realistic_dummy_content: 0
+  realistic_dummy_content_api: 0
+  rest: 0
+  restui: 0
   search: 0
+  serialization: 0
   shortcut: 0
+  statistics: 0
   system: 0
   taxonomy: 0
   text: 0
@@ -46,6 +59,7 @@ module:
   user: 0
   views_ui: 0
   menu_link_content: 1
+  content_translation: 10
   views: 10
   standard: 1000
 theme:

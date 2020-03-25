@@ -2,6 +2,7 @@
 
 namespace Drupal\cdp_task\Entity;
 
+use Drupal\cdp_project_entity\Entity\CdpProjectEntity;
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
@@ -49,6 +50,14 @@ use Drupal\cdp_task\CdpTaskInterface;
  * )
  */
 class CdpTask extends ContentEntityBase implements CdpTaskInterface {
+
+  public function getCdpTaskValue($value){
+    if($value === 'project'){
+      return CdpProjectEntity::Load($this->get($value)->target_id)->getCdpProjectEntityValue('title');
+    }
+    return $this->get($value)->value;
+  }
+
 
   /**
    * {@inheritdoc}

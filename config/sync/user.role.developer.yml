@@ -10,6 +10,7 @@ permissions:
   - 'access cdp project entity overview'
   - 'access cdp task overview'
   - 'access user profiles'
+  - 'administer cdp_statistic configuration'
   - 'create cdp task'
   - 'edit cdp task'
   - 'view cdp task'

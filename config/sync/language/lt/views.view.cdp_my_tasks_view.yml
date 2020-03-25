@@ -1,0 +1,34 @@
+display:
+  default:
+    display_options:
+      header:
+        area:
+          content:
+            value: "<p><button type=\"button\">Add new task</button></p>\r\n"
+            format: full_html
+      fields:
+        title:
+          label: Pavadinimas
+        description__value:
+          label: Aprašymas
+        task_status:
+          label: 'Užduoties statusas'
+        techlead:
+          label: 'Techlead`o vardas'
+        techlead_time:
+          label: 'Techlead`o laikas'
+        developer:
+          label: 'Programuotojo vardas'
+        developer_time:
+          label: 'Programuotojo laikas'
+        total_time:
+          label: 'Tikrasis laikas'
+        project:
+          label: Projektas
+        link__uri:
+          label: 'Užduoties nuoroda'
+      title: 'Mano užduotys'
+  page_1:
+    display_options:
+      menu:
+        title: 'Mano užduotys'

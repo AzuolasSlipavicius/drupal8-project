@@ -1,0 +1,17 @@
+uuid: 23cec23e-e1c4-43ad-84b2-6e39102ae75b
+langcode: en
+status: true
+dependencies:
+  module:
+    - cdp_task
+    - content_translation
+third_party_settings:
+  content_translation:
+    enabled: true
+    bundle_settings:
+      untranslatable_fields_hide: '0'
+id: cdp_task.cdp_task
+target_entity_type_id: cdp_task
+target_bundle: cdp_task
+default_langcode: site_default
+language_alterable: true

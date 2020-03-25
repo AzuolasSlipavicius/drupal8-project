@@ -2,8 +2,6 @@
   Drupal.behaviors.my_custom_behavior = {
     attach: function (context, settings) {
       let data = drupalSettings.cdp_stats;
-      // iterate through key-value gracefully
-      console.log(data);
       chartRender(data);
     }
   }
