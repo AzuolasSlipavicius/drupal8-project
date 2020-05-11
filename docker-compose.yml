@@ -30,6 +30,10 @@ services:
       PHP_XDEBUG_IDEKEY: "PHPSTORM"
       PHP_XDEBUG_REMOTE_HOST: host.docker.internal # Docker 18.03+ Mac/Win
       PHP_XDEBUG_REMOTE_LOG: /var/www/html/web/sites/default/files/php-xdebug.log
+      SIMPLETEST_BASE_URL: "http://nginx"
+      SIMPLETEST_DB: "${DB_DRIVER}://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}#tests_"
+      MINK_DRIVER_ARGS_WEBDRIVER: '["chrome", {"browserName":"chrome","goog:chromeOptions":{"args":["--disable-gpu","--headless"]}}, "http://chrome:9515"]'
+
     volumes:
       - ./:/var/www/html:cached
   nginx:

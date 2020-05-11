@@ -4,7 +4,6 @@ module:
   block: 0
   block_content: 0
   breakpoint: 0
-  cdp_boom: 0
   cdp_project_entity: 0
   cdp_role_selection: 0
   cdp_statistic: 0

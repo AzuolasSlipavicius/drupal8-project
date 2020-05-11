@@ -16,6 +16,7 @@
     ],
     "require": {
         "composer/installers": "^1.2",
+        "cweagans/composer-patches": "~1.0",
         "drupal/content_fixtures": "^1.1",
         "drupal/core-composer-scaffold": "^8.8",
         "drupal/core-project-message": "^8.8",
@@ -23,11 +24,13 @@
         "drupal/devel": "^2.1",
         "drupal/realistic_dummy_content": "^2.0",
         "drupal/restui": "^1.17",
-        "drush/drush": "^10.2"
+        "drush/drush": "^10.2",
+        "symfony/phpunit-bridge": "^3.4.3"
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^0.6.2",
-        "drupal/coder": "^8.3"
+        "drupal/coder": "^8.3",
+        "phpunit/phpunit": "^6.5"
     },
     "conflict": {
         "drupal/drupal": "*"
@@ -71,6 +74,12 @@
                 "  * Remove the plugin that prints this message:",
                 "      composer remove drupal/core-project-message"
             ]
+        },
+        "enable-patching": true,
+        "patches": {
+            "drupal/core": {
+                "2982052 - Allow an install hook in profiles installing from configuration": "https://www.drupal.org/files/issues/2020-01-09/2982052-37.patch"
+            }
         }
     }
 }
