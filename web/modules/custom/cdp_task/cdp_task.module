@@ -36,24 +36,6 @@ function template_preprocess_cdp_task(array &$variables) {
   }
 }
 
-/**
- * Implements hook_form_alter().
- */
-//function cdp_task_form_alter(&$form, FormStateInterfaceAlias $form_state, $form_id) {
-//  if($form['#id'] === 'cdp-task-add-form' || $form['#id'] === 'cdp-task-edit-form') {
-//    $current_role = _cdp_task_get_role();
-//    if ($current_role === 'developer') {
-//      $form['techlead']['widget']['#access'] = false;
-//      $form['techlead']['widget']['#required'] = false;
-//      $form['techlead_time']['widget']['#access'] = false;
-//    } elseif ($current_role === 'tech_lead') {
-//      $form['developer']['widget']['#access'] = false;
-//      $form['developer']['widget']['#required'] = false;
-//      $form['developer_time']['widget']['#access'] = false;
-//    }
-//  }
-//}
-
 function _cdp_task_get_role(){
   $roles = ['developer', 'tech_lead'];
   foreach ($roles as $role) {
@@ -61,4 +43,13 @@ function _cdp_task_get_role(){
       return $role;
     }
   }
+}
+
+/**
+ * Implements hook_form_alter().
+ */
+function cdp_task_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
+{
+  $data = Drupal::service('cdp_jira_api');
+  $form['project']['widget']['#options'] = $data->getContent();
 }
