@@ -1,0 +1,5 @@
+services:
+  cdp_task_custom_role:
+    class: Drupal\cdp_task\Form\CdpGetLoggedUserCustomRole
+  cdp_jira_api:
+    class: Drupal\cdp_task\CdpJiraDecode
