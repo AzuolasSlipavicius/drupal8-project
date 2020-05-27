@@ -2,15 +2,16 @@
 
 namespace Drupal\Tests\cdp_task\Functional;
 
-use Drupal\Tests\BrowserTestBase;
 use Drupal\Core\Url;
+use Drupal\Tests\BrowserTestBase;
 
 /**
  * Test description.
  *
  * @group cdp_task
  */
-class TaskFormTest extends BrowserTestBase {
+class TaskFormTest extends BrowserTestBase
+{
 
 
   /**
@@ -21,7 +22,7 @@ class TaskFormTest extends BrowserTestBase {
   public static $modules = [
     'cdp_task',
     'user'
-    ];
+  ];
   private $user;
   private $user_dev;
   private $user_tech;
@@ -31,12 +32,13 @@ class TaskFormTest extends BrowserTestBase {
   /**
    * {@inheritdoc}
    */
-  protected function setUp() {
+  protected function setUp()
+  {
     parent::setUp();
-    $this->user = $this->CreateUser(['create cdp task'],'test_user');
-    $this->user_dev = $this->CreateUser([],'user_dev');
+    $this->user = $this->CreateUser(['create cdp task'], 'test_user');
+    $this->user_dev = $this->CreateUser([], 'user_dev');
     $this->user_dev->addRole('developer');
-    $this->user_tech = $this->CreateUser([],'test_tech');
+    $this->user_tech = $this->CreateUser([], 'test_tech');
     $this->user_tech->addRole('techlead');
     // Login as created user.
     $this->drupalLogin($this->user);
@@ -56,7 +58,9 @@ class TaskFormTest extends BrowserTestBase {
     // Assure we loaded settings with proper permissions.
     $this->session->statusCodeEquals(200);
   }
-  public function testTaskFormFields(){
+
+  public function testTaskFormFields()
+  {
     // Check if all fields exists.
     $this->session->fieldExists('title[0][value]');
     $this->session->fieldExists('description[0][value]');
@@ -70,7 +74,9 @@ class TaskFormTest extends BrowserTestBase {
     $this->session->fieldExists('link[0][uri]');
     $this->session->fieldExists('link[0][title]');
   }
-  public function testTaskFormCreateNewForm(){
+
+  public function testTaskFormCreateNewForm()
+  {
     // Field data for new task.
     $new_task = [
       'title[0][value]' => 'simple task',
@@ -81,7 +87,7 @@ class TaskFormTest extends BrowserTestBase {
       'developer_time[0][value]' => 10,
     ];
     // Create new task.
-    $this->drupalPostForm($this->task_form, $new_task, 'Save',[],'cdp_task');
+    $this->drupalPostForm($this->task_form, $new_task, 'Save', [], 'cdp_task');
   }
 
 }

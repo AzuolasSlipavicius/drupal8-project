@@ -5,13 +5,14 @@
  * Provides a cdp task entity type.
  */
 
-use Drupal\Core\Form\FormStateInterface as FormStateInterfaceAlias;
+use Drupal\Core\Field\BaseFieldDefinition;
 use Drupal\Core\Render\Element;
 
 /**
  * Implements hook_theme().
  */
-function cdp_task_theme() {
+function cdp_task_theme()
+{
   return [
     'cdp_task' => [
       'render element' => 'elements',
@@ -30,13 +31,15 @@ function cdp_task_theme() {
  *     fields attached to the entity.
  *   - attributes: HTML attributes for the containing element.
  */
-function template_preprocess_cdp_task(array &$variables) {
+function template_preprocess_cdp_task(array &$variables)
+{
   foreach (Element::children($variables['elements']) as $key) {
     $variables['content'][$key] = $variables['elements'][$key];
   }
 }
 
-function _cdp_task_get_role(){
+function _cdp_task_get_role()
+{
   $roles = ['developer', 'tech_lead'];
   foreach ($roles as $role) {
     if (\Drupal\user\Entity\User::load(\Drupal::currentUser()->id())->hasRole($role)) {
@@ -46,10 +49,33 @@ function _cdp_task_get_role(){
 }
 
 /**
- * Implements hook_form_alter().
+ * Updates defintion for set entity.
  */
-function cdp_task_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state, $form_id)
+function cdp_task_update_8001()
 {
   $data = Drupal::service('cdp_jira_api');
-  $form['project']['widget']['#options'] = $data->getContent();
+  $field_storage_definition = BaseFieldDefinition::create('list_string')
+    ->setLabel(t('Jira key'))
+    ->setCardinality(1)
+    ->setSetting('allowed_values', $data->getContent())
+    ->setDefaultValue('- None -')
+    ->setDisplayOptions(
+      'form',
+      [
+        'type' => 'list',
+        'weight' => 10,
+      ]
+    )
+    ->setDisplayConfigurable('form', TRUE)
+    ->setDisplayOptions(
+      'view',
+      [
+        'type' => 'list',
+        'weight' => 10,
+      ]
+    )
+    ->setDisplayConfigurable('view', TRUE);
+
+  \Drupal::entityDefinitionUpdateManager()
+    ->installFieldStorageDefinition('jira_key', 'cdp_task', 'cdp_task', $field_storage_definition);
 }

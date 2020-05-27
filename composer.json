@@ -24,13 +24,13 @@
         "drupal/devel": "^2.1",
         "drupal/realistic_dummy_content": "^2.0",
         "drupal/restui": "^1.17",
-        "drush/drush": "^10.2",
-        "symfony/phpunit-bridge": "^3.4.3"
+        "drush/drush": "^10.2"
     },
     "require-dev": {
         "dealerdirect/phpcodesniffer-composer-installer": "^0.6.2",
         "drupal/coder": "^8.3",
-        "phpunit/phpunit": "^6.5"
+        "phpunit/phpunit": "^6.5",
+        "symfony/phpunit-bridge": "^5.0"
     },
     "conflict": {
         "drupal/drupal": "*"

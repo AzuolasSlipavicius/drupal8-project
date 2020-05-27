@@ -2,11 +2,12 @@
 
 namespace Drupal\cdp_task\Entity;
 
+use Drupal;
 use Drupal\cdp_project_entity\Entity\CdpProjectEntity;
+use Drupal\cdp_task\CdpTaskInterface;
 use Drupal\Core\Entity\ContentEntityBase;
 use Drupal\Core\Entity\EntityTypeInterface;
 use Drupal\Core\Field\BaseFieldDefinition;
-use Drupal\cdp_task\CdpTaskInterface;
 
 /**
  * Defines the cdp task entity class.
@@ -49,10 +50,12 @@ use Drupal\cdp_task\CdpTaskInterface;
  *   field_ui_base_route = "entity.cdp_task.settings"
  * )
  */
-class CdpTask extends ContentEntityBase implements CdpTaskInterface {
+class CdpTask extends ContentEntityBase implements CdpTaskInterface
+{
 
-  public function getCdpTaskValue($value){
-    if($value === 'project'){
+  public function getCdpTaskValue($value)
+  {
+    if ($value === 'project') {
       return CdpProjectEntity::Load($this->get($value)->target_id)->getCdpProjectEntityValue('title');
     }
     return $this->get($value)->value;
@@ -62,14 +65,16 @@ class CdpTask extends ContentEntityBase implements CdpTaskInterface {
   /**
    * {@inheritdoc}
    */
-  public function getTitle() {
+  public function getTitle()
+  {
     return $this->get('title')->value;
   }
 
   /**
    * {@inheritdoc}
    */
-  public function setTitle($title) {
+  public function setTitle($title)
+  {
     $this->set('title', $title);
     return $this;
   }
@@ -77,15 +82,24 @@ class CdpTask extends ContentEntityBase implements CdpTaskInterface {
   /**
    * {@inheritdoc}
    */
-  public function isEnabled() {
-    return (bool) $this->get('status')->value;
+  public function isEnabled()
+  {
+    return (bool)$this->get('status')->value;
+  }
+
+  private function jiraData()
+  {
+
+    $data = Drupal::service('cdp_jira_api');
+    return $data->getContent();
   }
 
   /**
    * {@inheritdoc}
    */
   public static function baseFieldDefinitions(EntityTypeInterface $entity_type
-  ) {
+  )
+  {
 
     $fields = parent::baseFieldDefinitions($entity_type);
 
@@ -344,6 +358,30 @@ class CdpTask extends ContentEntityBase implements CdpTaskInterface {
         [
           'type' => 'rul',
           'weight' => 9,
+        ]
+      )
+      ->setDisplayConfigurable('view', TRUE);
+
+    $data = Drupal::service('cdp_jira_api');
+
+    $fields['jira_key'] = BaseFieldDefinition::create('list_string')
+      ->setLabel(t('Jira key'))
+      ->setCardinality(1)
+      ->setSetting('allowed_values', $data->getContent())
+      ->setDefaultValue('- None -')
+      ->setDisplayOptions(
+        'form',
+        [
+          'type' => 'list',
+          'weight' => 10,
+        ]
+      )
+      ->setDisplayConfigurable('form', TRUE)
+      ->setDisplayOptions(
+        'view',
+        [
+          'type' => 'list',
+          'weight' => 10,
         ]
       )
       ->setDisplayConfigurable('view', TRUE);
