@@ -4,3 +4,9 @@ cdp_project_entity.add_form:
   appears_on:
     - entity.cdp_project_entity.collection
     - project.add
+project.generate:
+  route_name: project.generate
+  title: 'Add/remove cdp project dummy content'
+  appears_on:
+    - entity.cdp_project_entity.collection
+    - project.add

@@ -8,3 +8,10 @@ entity.cdp_task.settings:
 
 entity.cdp_task.add:
   path: 'tasker'
+task.generate:
+  path: 'task/generate'
+  defaults:
+    _form: '\Drupal\cdp_task\Form\CdpTaskDummyForm'
+    _title: 'Add/remove cdp task dummy content'
+  requirements:
+    _permission: 'administer cdp task'

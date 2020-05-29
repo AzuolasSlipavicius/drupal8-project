@@ -8,6 +8,3 @@ entity.cdp_project_entity.collection:
   description: List of cdp project entities
   route_name: entity.cdp_project_entity.collection
   parent: system.admin_content
-project.add:
-  title: Add Project
-  route_name: project.add

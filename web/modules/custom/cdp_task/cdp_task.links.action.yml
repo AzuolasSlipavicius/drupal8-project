@@ -4,3 +4,9 @@ cdp_task.add_form:
   appears_on:
     - entity.cdp_task.collection
     - entity.cdp_task.add
+task.generate:
+  route_name: task.generate
+  title: 'Add/remove cdp task dummy content'
+  appears_on:
+    - entity.cdp_task.collection
+    - entity.cdp_task.add

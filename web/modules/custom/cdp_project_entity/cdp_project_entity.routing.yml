@@ -7,3 +7,10 @@ entity.cdp_project_entity.settings:
     _permission: 'administer cdp project entity'
 project.add:
   path: 'project'
+project.generate:
+  path: 'project/generate'
+  defaults:
+    _form: '\Drupal\cdp_project_entity\Form\CdpProjectEntityDummyForm'
+    _title: 'Add/remove cdp project dummy content'
+  requirements:
+    _permission: 'administer cdp project entity'
